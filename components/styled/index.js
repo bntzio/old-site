@@ -1,4 +1,10 @@
 import styled, { injectGlobal } from 'styled-components';
+import { compute, ifDefined } from '../../utils/hedron/';
+import {
+  Page as HedronPage,
+  Row as HedronRow,
+  Column as HedronColumn
+} from 'hedron';
 
 /*
  * Global Styles
@@ -7,6 +13,57 @@ injectGlobal`
   body {
     font-family: Arial, Helvetica, sans-serif;
   }
+`;
+
+/*
+ * Page
+ */
+export const Page = styled(HedronPage)`
+  ${props =>
+    props.fluid
+    ? 'width: 100%;'
+    : `
+      margin: 0 auto;
+      max-width: 100%;
+      ${props.width
+        ? `width: ${props.width};`
+        : 'width: 960px;'
+      }
+    `
+  }
+`;
+
+/*
+ * Row
+ */
+export const Row = styled(HedronRow)`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  ${ifDefined('alignContent', 'align-content')}
+  ${ifDefined('alignItems', 'align-items')}
+  ${ifDefined('alignSelf', 'align-self')}
+  ${ifDefined('justifyContent', 'justify-content')}
+  ${ifDefined('order')}
+`;
+
+/*
+ * Column
+ */
+export const Column = styled(HedronColumn)`
+  display: block;
+  ${props => props.debug
+    ? `background-color: rgba(50, 50, 255, .1);
+       outline: 1px solid #fff;`
+    : ''
+  }
+  box-sizing: border-box;
+  padding: ${props => props.fluid ? '0' : '20px'};
+  width: 100%;
+  ${compute('xs')}
+  ${compute('sm')}
+  ${compute('md')}
+  ${compute('lg')}
 `;
 
 /*
