@@ -10,7 +10,7 @@ export default class Index extends React.Component {
   render() {
     return (
       <Page>
-        <Helmet title={config.siteTitle} meta={[{ 'name': 'description', 'content': 'sample' }]} />
+        <Helmet title={config.siteTitle} meta={[{ 'name': 'description', 'content': config.siteDescription }]} />
         <Row>
           <Column>
             <Title>Enrique Benitez</Title>
