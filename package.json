@@ -41,6 +41,7 @@
     "react-helmet": "^3.2.2",
     "recompose": "^0.21.2",
     "styled-components": "^1.2.1",
+    "styled-normalize": "^1.0.0",
     "toml-js": "0.0.8"
   },
   "devDependencies": {

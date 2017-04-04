@@ -1,5 +1,7 @@
+import normalize from 'styled-normalize';
 import styled, { injectGlobal } from 'styled-components';
 import { compute, ifDefined } from '../../utils/hedron';
+import { rem } from './style-utils';
 import {
   Page as HedronPage,
   Row as HedronRow,
@@ -10,8 +12,11 @@ import {
  * Global Styles
  */
 injectGlobal`
+  ${normalize}
+
   body {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
   }
 `;
 
@@ -67,10 +72,10 @@ export const Column = styled(HedronColumn)`
 `;
 
 /*
- * Title
+ * SiteTitle
  */
-export const Title = styled.h1`
-  font-size: 24px;
+export const SiteTitle = styled.h1`
+  ${rem('font-size', 22)}
 `;
 
 /*

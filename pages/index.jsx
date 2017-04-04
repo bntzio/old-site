@@ -7,17 +7,17 @@ import {
   Page,
   Row,
   Column,
-  Title
+  SiteTitle
 } from '../components/styled/';
 
 export default class Index extends React.Component {
   render() {
     return (
-      <Page>
+      <Page fluid>
         <Helmet title={config.siteTitle} meta={[{ 'name': 'description', 'content': config.siteDescription }]} />
         <Row>
           <Column>
-            <Title>Enrique Benitez</Title>
+            <SiteTitle>Enrique Benitez</SiteTitle>
           </Column>
         </Row>
         <Row>
