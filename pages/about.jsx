@@ -1,14 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { prefixLink } from 'gatsby-helpers';
 import { Row, Column, Page } from 'hedron';
 import { config } from 'config';
 import _ from 'lodash';
-import {
-  Message,
-  StyledLink,
-  Text
-} from '../components/styled/';
+import { Title } from '../components/styled/';
 
 export default class About extends React.Component {
   render() {
@@ -18,25 +13,14 @@ export default class About extends React.Component {
     return (
       <Page>
         <Helmet title={`${config.siteTitle} - ${_.capitalize(post.name)}`} />
-        <Row divisions={1}>
-          <Column sm={1}>
-            <StyledLink to={prefixLink('/')}>back home</StyledLink>
-          </Column>
-          <Column sm={1}>
-            <Message>About Superstylin'</Message>
+        <Row>
+          <Column>
+            <Title>About</Title>
           </Column>
         </Row>
         <Row>
           <Column>
-            <Text fontSize="18px">
-              Superstylin' is a Gatsby starter focused on <b><a href="https://github.com/styled-components/styled-components" target="_blank">styled-components</a></b>.
-            </Text>
-            <Text fontSize="18px">
-              By using <b>styled-components</b>, it means you write your <b>CSS in your JS</b>.
-            </Text>
-            <Text fontSize="18px">
-              Just create a component and give it some styles and you're good to go, <b><a href="https://github.com/bntzio/gatsby-starter-superstylin#readme" target="_blank">read the readme for more</a></b>.
-            </Text>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </Column>
         </Row>
       </Page>

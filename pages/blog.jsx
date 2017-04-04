@@ -1,16 +1,12 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { prefixLink } from 'gatsby-helpers';
 import { Page, Row, Column } from 'hedron';
 import { config } from 'config';
 import _ from 'lodash';
 import moment from 'moment';
 import uuid from 'uuid';
 import PostLink from '../components/PostLink';
-import {
-  Message,
-  StyledLink
-} from '../components/styled/';
+import { Title } from '../components/styled/';
 
 export default class Blog extends React.Component {
   renderPosts(route) {
@@ -36,18 +32,13 @@ export default class Blog extends React.Component {
     return (
       <Page>
         <Helmet title={`${config.siteTitle} - Blog`} />
-        <Row divisions={1}>
-          <Column sm={1}>
-            <StyledLink to={prefixLink('/')}>back home</StyledLink>
-          </Column>
-          <Column sm={1}>
-            <Message>From our blog</Message>
+        <Row>
+          <Column>
+            <Title>Blog</Title>
           </Column>
         </Row>
         <Row>
-          <Column>
-            {this.renderPosts(route)}
-          </Column>
+          {this.renderPosts(route)}
         </Row>
       </Page>
     );
