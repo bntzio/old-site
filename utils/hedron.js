@@ -1,5 +1,4 @@
-import divvy from './divvy';
-import breakpoint from './breakpoint';
+import { divvy, breakpoint } from 'hedron/lib/utils/';
 
 export const compute = name =>
   breakpoint(name, (props, name) =>

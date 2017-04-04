@@ -1,5 +1,5 @@
 import styled, { injectGlobal } from 'styled-components';
-import { compute, ifDefined } from '../../utils/hedron/';
+import { compute, ifDefined } from '../../utils/hedron';
 import {
   Page as HedronPage,
   Row as HedronRow,
