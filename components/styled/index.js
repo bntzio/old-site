@@ -79,6 +79,13 @@ export const SiteTitle = styled.h1`
 `;
 
 /*
+ * COMMENT
+ */
+export const HeaderOne = styled.h1`
+  ${rem('font-size', 20)}
+`;
+
+/*
  * PostLinkTitle
  */
 export const PostLinkTitle = styled.h2`

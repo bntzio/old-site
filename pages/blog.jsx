@@ -1,12 +1,16 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Page, Row, Column } from 'hedron';
 import { config } from 'config';
 import _ from 'lodash';
 import moment from 'moment';
 import uuid from 'uuid';
 import PostLink from '../components/PostLink';
-import { Title } from '../components/styled/';
+import {
+  Page,
+  Row,
+  Column,
+  HeaderOne
+} from '../components/styled/';
 
 export default class Blog extends React.Component {
   renderPosts(route) {
@@ -34,7 +38,7 @@ export default class Blog extends React.Component {
         <Helmet title={`${config.siteTitle} - Blog`} />
         <Row>
           <Column>
-            <Title>Blog</Title>
+            <HeaderOne>Blog</HeaderOne>
           </Column>
         </Row>
         <Row>

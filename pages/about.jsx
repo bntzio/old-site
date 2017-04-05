@@ -1,9 +1,13 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Row, Column, Page } from 'hedron';
 import { config } from 'config';
 import _ from 'lodash';
-import { Title } from '../components/styled/';
+import {
+  Page,
+  Row,
+  Column,
+  HeaderOne
+} from '../components/styled/';
 
 export default class About extends React.Component {
   render() {
@@ -15,7 +19,7 @@ export default class About extends React.Component {
         <Helmet title={`${config.siteTitle} - ${_.capitalize(post.name)}`} />
         <Row>
           <Column>
-            <Title>About</Title>
+            <HeaderOne>About</HeaderOne>
           </Column>
         </Row>
         <Row>
