@@ -6,7 +6,7 @@ import {
   Page,
   Row,
   Column,
-  HeaderOne
+  HeadingOne
 } from '../components/styled/';
 
 export default class About extends React.Component {
@@ -19,7 +19,7 @@ export default class About extends React.Component {
         <Helmet title={`${config.siteTitle} - ${_.capitalize(post.name)}`} />
         <Row>
           <Column>
-            <HeaderOne>About</HeaderOne>
+            <HeadingOne>About</HeadingOne>
           </Column>
         </Row>
         <Row>

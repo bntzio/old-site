@@ -9,7 +9,7 @@ import {
   Page,
   Row,
   Column,
-  HeaderOne
+  HeadingOne
 } from '../components/styled/';
 
 export default class Blog extends React.Component {
@@ -38,7 +38,7 @@ export default class Blog extends React.Component {
         <Helmet title={`${config.siteTitle} - Blog`} />
         <Row>
           <Column>
-            <HeaderOne>Blog</HeaderOne>
+            <HeadingOne>Blog</HeadingOne>
           </Column>
         </Row>
         <Row>
