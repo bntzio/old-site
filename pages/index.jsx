@@ -1,31 +1,55 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'react-router';
-import { prefixLink } from 'gatsby-helpers';
 import { config } from 'config';
+import * as icons from '../helpers/icons.yaml';
 import {
-  Page,
+  MainPage,
   Row,
   Column,
-  SiteTitle
+  SiteTitle,
+  SiteSubtitle,
+  SiteDescription,
+  IconContainer,
+  Icon,
+  OverlayIcon
 } from '../components/styled/';
 
 export default class Index extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { showMenu: false };
+    this.toggleMenu = this.toggleMenu.bind(this);
+  }
+  toggleMenu() {
+    this.setState({ showMenu: !this.state.showMenu });
+    const body = document.getElementsByTagName('body');
+    const css = body[0].style;
+    if (this.state.showMenu === false) {
+      css.overflow = 'hidden';
+    } else {
+      css.overflow = 'visible';
+    }
+  }
   render() {
     return (
-      <Page fluid>
+      <MainPage fluid>
         <Helmet title={config.siteTitle} meta={[{ 'name': 'description', 'content': config.siteDescription }]} />
-        <Row>
-          <Column>
+        <Row divisions={12}>
+          <Column xs={10}>
             <SiteTitle>Enrique Benitez</SiteTitle>
           </Column>
+          <IconContainer xs={2}>
+            <Icon onClick={this.toggleMenu} pointer small color="white" dangerouslySetInnerHTML={ { __html: this.state.showMenu ? icons.close : icons.menu } } />
+            <OverlayIcon show={this.state.showMenu ? true : false } dangerouslySetInnerHTML={ { __html: icons.overlay } } />
+          </IconContainer>
         </Row>
         <Row>
           <Column>
-            <Link to={prefixLink('/about/')}>About</Link> | <Link to={prefixLink('/blog/')}>Blog</Link>
+            <SiteSubtitle>I Make Stuff.</SiteSubtitle>
+            <SiteDescription>My name is Enrique, I make beautiful digital products.</SiteDescription>
           </Column>
         </Row>
-      </Page>
-    )
+      </MainPage>
+    );
   }
 }

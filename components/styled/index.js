@@ -3,9 +3,13 @@ import styled, { injectGlobal } from 'styled-components';
 import { compute, ifDefined } from '../../utils/hedron';
 import {
   rem,
+  media,
   primaryColor,
+  secondaryColor,
   headingsColor,
-  textColor
+  textColor,
+  mainBgColor,
+  mainTextColor
 } from './style-utils';
 import {
   Page as HedronPage,
@@ -78,11 +82,37 @@ export const Column = styled(HedronColumn)`
 `;
 
 /*
+ * MainPage
+ */
+export const MainPage = styled(Page)`
+  background: ${mainBgColor}
+  ${rem('padding', 25)}
+  box-sizing: border-box;
+`;
+
+/*
  * SiteTitle
  */
 export const SiteTitle = styled.h1`
   ${rem('font-size', 22)}
   color: ${primaryColor()}
+`;
+
+/*
+ * SiteSubtitle
+ */
+export const SiteSubtitle = styled.h2`
+  ${rem('font-size', 30)}
+  color: ${secondaryColor()}
+  text-decoration: underline;
+`;
+
+/*
+ * SiteDescription
+ */
+export const SiteDescription = styled.p`
+  ${rem('font-size', 18)}
+  color: ${mainTextColor()}
 `;
 
 /*
@@ -130,4 +160,44 @@ export const PostBody = styled.div`
 export const PostDate = styled.span`
   font-size: 13px;
   font-weight: lighter;
+`;
+
+/*
+ * IconContainer
+ */
+export const IconContainer = styled(Column)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${ media.desktop`
+    display: none;
+  ` }
+`;
+
+/*
+ * Icon
+ */
+export const Icon = styled.div`
+  color: ${props => props.color};
+  z-index: 99;
+
+  svg {
+    width: ${props => props.small ? '20px' : '30px'};
+    cursor: ${props => props.pointer ? 'pointer' : 'auto'};
+    path, polygon, polyline, rect, line, circle {
+      fill: currentColor;
+      stroke: currentColor;
+    }
+  }
+`;
+
+/*
+ * OverlayIcon
+ */
+export const OverlayIcon = styled.div`
+  position: absolute;
+  transition: .6s ease all;
+  transform: ${props => props.show ? 'scale(12)' : 'scale(0)'};
+  height: ${props => props.show ? '100%' : '40px'};
+  width: ${props => props.show ? '100%' : '40px'};
 `;
