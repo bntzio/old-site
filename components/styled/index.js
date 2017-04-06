@@ -85,7 +85,7 @@ export const Column = styled(HedronColumn)`
  * MainPage
  */
 export const MainPage = styled(Page)`
-  background: ${mainBgColor}
+  background: ${mainBgColor()}
   ${rem('padding', 25)}
   box-sizing: border-box;
 `;
@@ -96,6 +96,9 @@ export const MainPage = styled(Page)`
 export const SiteTitle = styled.h1`
   ${rem('font-size', 22)}
   color: ${primaryColor()}
+  position: relative;
+  z-index: 100;
+  transition: .8s ease color;
 `;
 
 /*
@@ -196,10 +199,6 @@ export const Icon = styled.div`
  */
 export const OverlayIcon = styled.div`
   position: absolute;
-  transition: .6s ease all;
-  transform: ${props => props.show ? 'scale(12)' : 'scale(0)'};
-  height: ${props => props.show ? '100%' : '40px'};
-  width: ${props => props.show ? '100%' : '40px'};
 `;
 
 /*
@@ -207,18 +206,9 @@ export const OverlayIcon = styled.div`
  */
 export const OverlayContent = styled.div`
   position: absolute;
-  width: 100%;
-  top: ${props => props.show ? '15%' : '-10%'};
-  right: ${props => props.show ? '0%' : '-35%'};
-  opacity: ${props => props.show ? '1' : '0'};
-  transform: ${props => props.show ? 'scale(1)' : 'scale(0)'};
   z-index: 99;
-  transition: .8s ease all;
-
-  ul li {
-    transition: .6s ease all;
-    margin-bottom: ${props => props.show ? '20px' : '0px'}
-  }
+  top: 0;
+  right: 0;
 `;
 
 /*
@@ -238,6 +228,7 @@ export const OverlayMenu = styled.ul`
  */
 export const OverlayMenuItem = styled.li`
   ${rem('font-size', 24)}
+  ${rem('margin-bottom', 20)}
   text-transform: uppercase;
   color: white;
   display: flex;

@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router';
 import { config } from 'config';
+import { TweenLite, TimelineLite, Power0 } from 'gsap';
 import * as icons from '../helpers/icons.yaml';
 import {
   MainPage,
@@ -24,24 +25,80 @@ export default class Index extends React.Component {
     this.state = { showMenu: false };
     this.toggleMenu = this.toggleMenu.bind(this);
   }
+  componentDidMount() {
+    const overlayContent = document.getElementById('overlayContent');
+    TweenLite.set(overlayContent, {
+      scale: 0,
+      x: 270,
+      y: 150
+    });
+  }
+  startOverlayAnimation() {
+    const overlayIcon = document.getElementById('overlayIcon');
+    TweenLite.to(overlayIcon, .6, {
+      width: '200px',
+      height: '200px',
+      scale: 12,
+      ease: Power0.easeNone,
+      onStart: this.slideInMenuItems()
+    });
+  }
+  endOverlayAnimation() {
+    const overlayIcon = document.getElementById('overlayIcon');
+    TweenLite.to(overlayIcon, .6, {
+      scale: 0,
+      ease: Power0.easeNone,
+      onStart: this.slideOutMenuItems()
+    });
+  }
+  slideInMenuItems() {
+    const tl = new TimelineLite();
+    const overlayContent = document.getElementById('overlayContent');
+    const menuItems = document.getElementsByClassName('overlayItem');
+    TweenLite.set(overlayContent, { scale: 1 });
+    tl.staggerTo(menuItems, .2, {
+      x: -280,
+      autoAlpha: 1,
+      ease: Power0.easeNone
+    }, .1);
+  }
+  slideOutMenuItems() {
+    const tl = new TimelineLite();
+    const menuItems = document.getElementsByClassName('overlayItem');
+    tl.staggerTo(menuItems, .2, {
+      x: 160,
+      autoAlpha: 0,
+      ease: Power0.easeNone
+    }, .1, '+=0', this.hideOverlayContent);
+  }
+  hideOverlayContent() {
+    const overlayContent = document.getElementById('overlayContent');
+    TweenLite.set(overlayContent, { scale: 0 });
+  }
   toggleMenu() {
     this.setState({ showMenu: !this.state.showMenu });
     const body = document.getElementsByTagName('body');
-    const css = body[0].style;
+    const logo = document.getElementsByClassName('logo');
+    const bodyCss = body[0].style;
+    const logoCss = logo[0].style;
     if (this.state.showMenu === false) {
-      css.overflow = 'hidden';
+      bodyCss.overflow = 'hidden';
+      logoCss.color = 'white';
+      this.startOverlayAnimation();
     } else {
-      css.overflow = 'visible';
+      bodyCss.overflow = 'visible';
+      logoCss.color = '#ff695c';
+      this.endOverlayAnimation();
     }
   }
   render() {
     return (
       <MainPage fluid>
         <Helmet title={config.siteTitle} meta={[{ 'name': 'description', 'content': config.siteDescription }]} />
-        <OverlayContent show={this.state.showMenu ? true : false}>
+        <OverlayContent id="overlayContent">
           <Column>
-            <OverlayMenu>
-              <OverlayMenuItem>
+            <OverlayMenu id="overlayMenu">
+              <OverlayMenuItem className="overlayItem">
                 <Column>
                   <Link to="#">Blog</Link>
                 </Column>
@@ -49,7 +106,7 @@ export default class Index extends React.Component {
                   <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.blog } } />
                 </Column>
               </OverlayMenuItem>
-              <OverlayMenuItem>
+              <OverlayMenuItem className="overlayItem">
                 <Column>
                   <Link to="#">Projects</Link>
                 </Column>
@@ -57,7 +114,7 @@ export default class Index extends React.Component {
                   <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.projects } } />
                 </Column>
               </OverlayMenuItem>
-              <OverlayMenuItem>
+              <OverlayMenuItem className="overlayItem">
                 <Column>
                   <Link to="#">Experiments</Link>
                 </Column>
@@ -65,7 +122,7 @@ export default class Index extends React.Component {
                   <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.experiments } } />
                 </Column>
               </OverlayMenuItem>
-              <OverlayMenuItem>
+              <OverlayMenuItem className="overlayItem">
                 <Column>
                   <Link to="#">Courses</Link>
                 </Column>
@@ -73,7 +130,7 @@ export default class Index extends React.Component {
                   <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.courses } } />
                 </Column>
               </OverlayMenuItem>
-              <OverlayMenuItem>
+              <OverlayMenuItem className="overlayItem">
                 <Column>
                 </Column>
                   <Link to="#">Newsletter</Link>
@@ -81,7 +138,7 @@ export default class Index extends React.Component {
                   <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.newsletter } } />
                 </Column>
               </OverlayMenuItem>
-              <OverlayMenuItem>
+              <OverlayMenuItem className="overlayItem">
                 <Column>
                   <Link to="#">About</Link>
                 </Column>
@@ -94,11 +151,11 @@ export default class Index extends React.Component {
         </OverlayContent>
         <Row divisions={12}>
           <Column xs={10}>
-            <SiteTitle>Enrique Benitez</SiteTitle>
+            <SiteTitle className="logo">Enrique Benitez</SiteTitle>
           </Column>
           <IconContainer xs={2}>
             <Icon onClick={this.toggleMenu} pointer small fill color="white" dangerouslySetInnerHTML={ { __html: this.state.showMenu ? icons.close : icons.menu } } />
-            <OverlayIcon show={this.state.showMenu ? true : false } dangerouslySetInnerHTML={ { __html: icons.overlay } } />
+            <OverlayIcon id="overlayIcon" dangerouslySetInnerHTML={ { __html: icons.overlay } } />
           </IconContainer>
         </Row>
         <Row>
