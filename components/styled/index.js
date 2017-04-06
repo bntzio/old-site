@@ -185,8 +185,8 @@ export const Icon = styled.div`
     width: ${props => props.small ? '20px' : '30px'};
     cursor: ${props => props.pointer ? 'pointer' : 'auto'};
     path, polygon, polyline, rect, line, circle {
-      fill: currentColor;
-      stroke: currentColor;
+      fill: ${props => props.fill ? 'currentColor' : 'none'};
+      stroke: ${props => props.stroke ? 'currentColor' : 'none'};
     }
   }
 `;
@@ -200,4 +200,71 @@ export const OverlayIcon = styled.div`
   transform: ${props => props.show ? 'scale(12)' : 'scale(0)'};
   height: ${props => props.show ? '100%' : '40px'};
   width: ${props => props.show ? '100%' : '40px'};
+`;
+
+/*
+ * OverlayContent
+ */
+export const OverlayContent = styled.div`
+  position: absolute;
+  width: 100%;
+  top: ${props => props.show ? '15%' : '-10%'};
+  right: ${props => props.show ? '0%' : '-35%'};
+  opacity: ${props => props.show ? '1' : '0'};
+  transform: ${props => props.show ? 'scale(1)' : 'scale(0)'};
+  z-index: 99;
+  transition: .8s ease all;
+
+  ul li {
+    transition: .6s ease all;
+    margin-bottom: ${props => props.show ? '20px' : '0px'}
+  }
+`;
+
+/*
+ * OverlayMenu
+ */
+export const OverlayMenu = styled.ul`
+  list-style-type: none;
+  padding-left: 0;
+  margin-right: 7.3%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`;
+
+/*
+ * OverlayMenuItem
+ */
+export const OverlayMenuItem = styled.li`
+  ${rem('font-size', 24)}
+  text-transform: uppercase;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div:first-child {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+  }
+  div:last-child {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  a {
+    ${rem('margin-right', 10)}
+    color: white;
+    text-decoration: none;
+
+    &:hover, &:visited, &:focus {
+      color: white;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;

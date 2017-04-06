@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { Link } from 'react-router';
 import { config } from 'config';
 import * as icons from '../helpers/icons.yaml';
 import {
@@ -11,7 +12,10 @@ import {
   SiteDescription,
   IconContainer,
   Icon,
-  OverlayIcon
+  OverlayIcon,
+  OverlayContent,
+  OverlayMenu,
+  OverlayMenuItem
 } from '../components/styled/';
 
 export default class Index extends React.Component {
@@ -34,12 +38,66 @@ export default class Index extends React.Component {
     return (
       <MainPage fluid>
         <Helmet title={config.siteTitle} meta={[{ 'name': 'description', 'content': config.siteDescription }]} />
+        <OverlayContent show={this.state.showMenu ? true : false}>
+          <Column>
+            <OverlayMenu>
+              <OverlayMenuItem>
+                <Column>
+                  <Link to="#">Blog</Link>
+                </Column>
+                <Column>
+                  <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.blog } } />
+                </Column>
+              </OverlayMenuItem>
+              <OverlayMenuItem>
+                <Column>
+                  <Link to="#">Projects</Link>
+                </Column>
+                <Column>
+                  <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.projects } } />
+                </Column>
+              </OverlayMenuItem>
+              <OverlayMenuItem>
+                <Column>
+                  <Link to="#">Experiments</Link>
+                </Column>
+                <Column>
+                  <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.experiments } } />
+                </Column>
+              </OverlayMenuItem>
+              <OverlayMenuItem>
+                <Column>
+                  <Link to="#">Courses</Link>
+                </Column>
+                <Column>
+                  <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.courses } } />
+                </Column>
+              </OverlayMenuItem>
+              <OverlayMenuItem>
+                <Column>
+                </Column>
+                  <Link to="#">Newsletter</Link>
+                <Column>
+                  <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.newsletter } } />
+                </Column>
+              </OverlayMenuItem>
+              <OverlayMenuItem>
+                <Column>
+                  <Link to="#">About</Link>
+                </Column>
+                <Column>
+                  <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.about } } />
+                </Column>
+              </OverlayMenuItem>
+            </OverlayMenu>
+          </Column>
+        </OverlayContent>
         <Row divisions={12}>
           <Column xs={10}>
             <SiteTitle>Enrique Benitez</SiteTitle>
           </Column>
           <IconContainer xs={2}>
-            <Icon onClick={this.toggleMenu} pointer small color="white" dangerouslySetInnerHTML={ { __html: this.state.showMenu ? icons.close : icons.menu } } />
+            <Icon onClick={this.toggleMenu} pointer small fill color="white" dangerouslySetInnerHTML={ { __html: this.state.showMenu ? icons.close : icons.menu } } />
             <OverlayIcon show={this.state.showMenu ? true : false } dangerouslySetInnerHTML={ { __html: icons.overlay } } />
           </IconContainer>
         </Row>
