@@ -91,7 +91,8 @@ export const Column = styled(HedronColumn)`
  * MainPage
  */
 export const MainPage = styled(Page)`
-  background: ${mainBgColor()}
+  background-color: ${mainBgColor()}
+  background-image: url('/images/topography.svg');
   ${rem('padding', 25)}
   box-sizing: border-box;
 `;
@@ -101,7 +102,7 @@ export const MainPage = styled(Page)`
  */
 export const SiteTitle = styled.h1`
   ${rem('font-size', 22)}
-  color: ${primaryColor()}
+  color: ${primaryColor()};
   position: relative;
   z-index: 100;
   transition: .8s ease color;
@@ -111,9 +112,11 @@ export const SiteTitle = styled.h1`
  * SiteSubtitle
  */
 export const SiteSubtitle = styled.h2`
-  ${rem('font-size', 30)}
-  color: ${secondaryColor()}
+  ${rem('font-size', 44)}
+  color: ${secondaryColor()};
+  text-shadow: 3.4px 1px 10px rgba(23, 23, 23, .7);
   text-decoration: underline;
+  margin-bottom: -6px;
 `;
 
 /*
@@ -122,6 +125,31 @@ export const SiteSubtitle = styled.h2`
 export const SiteDescription = styled.p`
   ${rem('font-size', 18)}
   color: ${mainTextColor()}
+`;
+
+/*
+ * SiteMessage
+ */
+export const SiteMessage = styled.p`
+  display: none;
+  color: ${mainTextColor};
+  text-shadow: 1px 1px 7px rgba(23, 23, 23, .7);
+  ${rem('margin-top', 28)}
+  ${rem('font-size', 13)}
+
+  ${ media.desktop`
+    display: flex;
+  ` }
+
+  a {
+    ${rem('margin-left', 3.2)}
+    color: ${mainTextColor()};
+    text-decoration: underline;
+
+    &:hover, &:focus, &:visited {
+      color: ${mainTextColor()};
+    }
+  }
 `;
 
 /*
@@ -242,6 +270,7 @@ export const Icon = styled.div`
  */
 export const OverlayIcon = styled.div`
   position: absolute;
+  z-index: 98;
 `;
 
 /*

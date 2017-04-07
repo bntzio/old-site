@@ -20,7 +20,7 @@ module.exports = React.createClass({
       css = <style dangerouslySetInnerHTML={{ __html: styles }} />;
     }
 
-    let fonts = <script type="text/javascript" src="//fast.fonts.net/jsapi/52312399-4b05-4128-b29c-2881eca832a7.js"></script>;
+    let fonts = <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/52312399-4b05-4128-b29c-2881eca832a7.css"/>;
     let gsap = <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>;
 
     return (

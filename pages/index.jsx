@@ -10,6 +10,7 @@ import {
   SiteTitle,
   SiteSubtitle,
   SiteDescription,
+  SiteMessage,
   SiteNav,
   SiteNavItem,
   IconContainer,
@@ -27,7 +28,7 @@ export default class Index extends React.Component {
     this.toggleMenu = this.toggleMenu.bind(this);
   }
   componentDidMount() {
-    this.startMenuAnimation();
+    this.startIntroAnimation();
   }
   startOverlayAnimation() {
     const overlayIcon = document.getElementById('overlayIcon');
@@ -92,10 +93,24 @@ export default class Index extends React.Component {
   startMenuAnimation() {
     const navItems = document.getElementsByClassName('nav-item');
     const tl = new TimelineLite();
-    tl.staggerTo(navItems, .2, {
+    tl.staggerTo(navItems, .4, {
       x: -135,
       ease: Power0.easeNone
-    }, .1);
+    }, .2);
+  }
+  startIntroAnimation() {
+    const logo = document.getElementsByClassName('logo');
+    const description = document.getElementsByClassName('description');
+    const subtitle = document.getElementsByClassName('subtitle');
+    const message = document.getElementsByClassName('message');
+    const objs = [subtitle, description];
+    TweenMax.staggerFrom(objs, 1, { y: -25, ease: Power1.easeNone, autoAlpha: 0 }, .5);
+    TweenMax.staggerFrom(message, 1.4, { autoAlpha: 0, delay: 2.8 });
+    TweenMax.staggerFrom(logo, .7, {
+      autoAlpha: 0,
+      ease: Power0.easeNone,
+      onComplete: this.startMenuAnimation
+    });
   }
   render() {
     return (
@@ -167,7 +182,12 @@ export default class Index extends React.Component {
         <Row divisions={12}>
           <Column xs={11} md={6}>
             <SiteSubtitle className="subtitle">I Make Stuff.</SiteSubtitle>
-            <SiteDescription className="description">My name is Enrique, I make beautiful digital products.</SiteDescription>
+            <SiteDescription className="description">
+              I'm a maker who crafts beautiful digital products.
+            </SiteDescription>
+            <SiteMessage className="message">
+              Scroll down to learn more, or say <Link to="#">goodbye</Link>.
+            </SiteMessage>
           </Column>
           <Column xs={1} md={6}>
             <SiteNav className="nav">

@@ -13,17 +13,17 @@ export function secondaryColor() {
 }
 export function headingsColor() {
   return `
-    #1F2B38;
+    #162C42;
   `;
 }
 export function textColor() {
   return `
-    #9898A6;
+    #162C42;
   `;
 }
 export function mainBgColor() {
   return `
-    #172230;
+    #162C42;
   `;
 }
 export function mainTextColor() {
