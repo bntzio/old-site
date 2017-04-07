@@ -207,8 +207,9 @@ export const OverlayIcon = styled.div`
 export const OverlayContent = styled.div`
   position: absolute;
   z-index: 99;
-  top: 0;
-  right: 0;
+  top: 150px;
+  right: -270px;
+  transform: scale(0);
 `;
 
 /*

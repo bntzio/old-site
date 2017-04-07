@@ -2,7 +2,6 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router';
 import { config } from 'config';
-import { TweenLite, TimelineLite, Power0 } from 'gsap';
 import * as icons from '../helpers/icons.yaml';
 import {
   MainPage,
@@ -24,14 +23,6 @@ export default class Index extends React.Component {
     super(props);
     this.state = { showMenu: false };
     this.toggleMenu = this.toggleMenu.bind(this);
-  }
-  componentDidMount() {
-    const overlayContent = document.getElementById('overlayContent');
-    TweenLite.set(overlayContent, {
-      scale: 0,
-      x: 270,
-      y: 150
-    });
   }
   startOverlayAnimation() {
     const overlayIcon = document.getElementById('overlayIcon');
