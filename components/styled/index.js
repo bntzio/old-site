@@ -228,6 +228,10 @@ export const OverlayMenu = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  ${ media.desktop`
+    display: none;
+  ` }
 `;
 
 /*
