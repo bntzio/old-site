@@ -125,6 +125,43 @@ export const SiteDescription = styled.p`
 `;
 
 /*
+ * SiteNav
+ */
+export const SiteNav = styled.ul`
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  list-style-type: none;
+  margin-left: 0;
+  ${ media.desktop`
+    display: flex;
+  ` }
+`;
+
+/*
+ * SiteNavItem
+ */
+export const SiteNavItem = styled.li`
+  right: -150px;
+  position: relative;
+  ${rem('font-size', 18)}
+  ${rem('margin-bottom', 10)}
+
+  a {
+    color: ${primaryColor()};
+    text-decoration: none;
+    transition: .2s ease color;
+
+    &:visited, &:focus {
+      color: ${primaryColor()};
+    }
+    &:hover {
+      color: ${secondaryColor()};
+    }
+  }
+`;
+
+/*
  * HeadingOne
  */
 export const HeadingOne = styled.h1`
@@ -240,7 +277,6 @@ export const OverlayMenu = styled.ul`
 export const OverlayMenuItem = styled.li`
   ${rem('font-size', 24)}
   ${rem('margin-bottom', 20)}
-  text-transform: uppercase;
   color: white;
   display: flex;
   justify-content: center;

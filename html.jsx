@@ -20,6 +20,9 @@ module.exports = React.createClass({
       css = <style dangerouslySetInnerHTML={{ __html: styles }} />;
     }
 
+    let fonts = <script type="text/javascript" src="//fast.fonts.net/jsapi/52312399-4b05-4128-b29c-2881eca832a7.js"></script>;
+    let gsap = <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>;
+
     return (
       <html lang="en">
         <head>
@@ -29,11 +32,12 @@ module.exports = React.createClass({
           {head.title.toComponent()}
           {head.meta.toComponent()}
           {css}
+          {fonts}
+          {gsap}
         </head>
         <body>
           <div id="react-mount" dangerouslySetInnerHTML={{ __html: this.props.body }} />
           <script src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)} />
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
         </body>
       </html>
     );

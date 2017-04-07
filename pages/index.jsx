@@ -10,6 +10,8 @@ import {
   SiteTitle,
   SiteSubtitle,
   SiteDescription,
+  SiteNav,
+  SiteNavItem,
   IconContainer,
   Icon,
   OverlayIcon,
@@ -23,6 +25,9 @@ export default class Index extends React.Component {
     super(props);
     this.state = { showMenu: false };
     this.toggleMenu = this.toggleMenu.bind(this);
+  }
+  componentDidMount() {
+    this.startMenuAnimation();
   }
   startOverlayAnimation() {
     const overlayIcon = document.getElementById('overlayIcon');
@@ -83,6 +88,14 @@ export default class Index extends React.Component {
       logoCss.color = '#ff695c';
       this.endOverlayAnimation();
     }
+  }
+  startMenuAnimation() {
+    const navItems = document.getElementsByClassName('nav-item');
+    const tl = new TimelineLite();
+    tl.staggerTo(navItems, .2, {
+      x: -135,
+      ease: Power0.easeNone
+    }, .1);
   }
   render() {
     return (
@@ -151,10 +164,20 @@ export default class Index extends React.Component {
             <OverlayIcon id="overlayIcon" dangerouslySetInnerHTML={ { __html: icons.overlay } } />
           </IconContainer>
         </Row>
-        <Row>
-          <Column>
-            <SiteSubtitle>I Make Stuff.</SiteSubtitle>
-            <SiteDescription>My name is Enrique, I make beautiful digital products.</SiteDescription>
+        <Row divisions={12}>
+          <Column xs={11} md={6}>
+            <SiteSubtitle className="subtitle">I Make Stuff.</SiteSubtitle>
+            <SiteDescription className="description">My name is Enrique, I make beautiful digital products.</SiteDescription>
+          </Column>
+          <Column xs={1} md={6}>
+            <SiteNav className="nav">
+              <SiteNavItem className="nav-item"><Link to="#">Blog</Link></SiteNavItem>
+              <SiteNavItem className="nav-item"><Link to="#">Projects</Link></SiteNavItem>
+              <SiteNavItem className="nav-item"><Link to="#">Experiments</Link></SiteNavItem>
+              <SiteNavItem className="nav-item"><Link to="#">Courses</Link></SiteNavItem>
+              <SiteNavItem className="nav-item"><Link to="#">Newsletter</Link></SiteNavItem>
+              <SiteNavItem className="nav-item"><Link to="#">About</Link></SiteNavItem>
+            </SiteNav>
           </Column>
         </Row>
       </MainPage>
