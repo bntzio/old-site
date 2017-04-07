@@ -28,6 +28,12 @@ injectGlobal`
     font-size: 16px;
     color: ${textColor()}
   }
+
+  .overflowHidden {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
 `;
 
 /*

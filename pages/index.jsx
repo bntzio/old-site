@@ -68,16 +68,18 @@ export default class Index extends React.Component {
   }
   toggleMenu() {
     this.setState({ showMenu: !this.state.showMenu });
-    const body = document.getElementsByTagName('body');
+    const html = document.querySelector('html'); // or document.body.parentNode;
+    const body = document.body;
     const logo = document.getElementsByClassName('logo');
-    const bodyCss = body[0].style;
     const logoCss = logo[0].style;
     if (this.state.showMenu === false) {
-      bodyCss.overflow = 'hidden';
+      html.classList.add('overflowHidden');
+      body.classList.add('overflowHidden');
       logoCss.color = 'white';
       this.startOverlayAnimation();
     } else {
-      bodyCss.overflow = 'visible';
+      html.classList.remove('overflowHidden');
+      body.classList.remove('overflowHidden');
       logoCss.color = '#ff695c';
       this.endOverlayAnimation();
     }
