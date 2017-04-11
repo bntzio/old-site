@@ -213,6 +213,14 @@ export const HeadingOne = styled.h1`
 `;
 
 /*
+ * HeadingFour
+ */
+export const HeadingSix = styled.h6`
+  ${rem('font-size', 20)}
+  color: ${headingsColor()}
+`;
+
+/*
  * PostLinkTitle
  */
 export const PostLinkTitle = styled.h2`
@@ -349,4 +357,56 @@ export const OverlayMenuItem = styled.li`
       text-decoration: underline;
     }
   }
+`;
+
+/*
+ * GoodbyePage
+ */
+export const GoodbyePage = styled(Page)`
+  background: linear-gradient(to bottom left, #528ce7, #ac3dd5);
+  height: 100vh;
+  width: 100%;
+`;
+
+/*
+ * GoodbyeTitle
+ */
+export const GoodbyeTitle = styled(HeadingSix)`
+  color: white;
+  ${rem('font-size', 33)};
+  ${rem('padding-left', 25)};
+  ${rem('padding-right', 25)};
+  margin-bottom: 0;
+
+  ${ media.tablet`
+    padding: 0 50px;
+    font-size: 38px;
+  ` }
+  ${ media.desktop`
+    padding: 0 120px;
+    font-size: 44px;
+  ` }
+`;
+
+/*
+ * GoodbyeMessage
+ */
+export const GoodbyeMessage = styled.p`
+  color: white;
+  ${rem('font-size', 16)};
+  ${rem('padding-left', 25)};
+  ${rem('padding-right', 25)};
+
+  a, a:hover, a:focus, a:visited {
+    text-decoration: none;
+  }
+
+  ${ media.tablet`
+    padding: 0 50px;
+    font-size: 17px;
+  ` }
+  ${ media.desktop`
+    padding: 0 120px;
+    font-size: 18px;
+  ` }
 `;

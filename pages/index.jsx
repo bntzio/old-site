@@ -182,7 +182,7 @@ export default class Index extends React.Component {
               I'm a maker who crafts beautiful digital products.
             </SiteDescription>
             <SiteMessage className="message">
-              Scroll down to learn more, or say <Link to="#">goodbye</Link>.
+              Scroll down to learn more, or say <Link to="/goodbye/">goodbye</Link>.
             </SiteMessage>
           </Column>
           <Column xs={1} md={6}>
