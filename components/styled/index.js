@@ -4,8 +4,6 @@ import { compute, ifDefined } from '../../utils/hedron';
 import {
   rem,
   media,
-  primaryColor,
-  secondaryColor,
   headingsColor,
   textColor,
   mainBgColor,
@@ -95,6 +93,18 @@ export const MainPage = styled(Page)`
   background-image: url('/images/topography.svg');
   ${rem('padding', 25)}
   box-sizing: border-box;
+  ${rem('padding-top', 10)}
+  ${rem('padding-right', 20)}
+  ${rem('padding-bottom', 10)}
+  ${rem('padding-left', 20)}
+
+  ${ media.tablet`
+    padding: 20px 40px;
+  ` }
+
+  ${ media.desktop`
+    padding: 30px 60px;
+  ` }
 `;
 
 /*
@@ -102,7 +112,7 @@ export const MainPage = styled(Page)`
  */
 export const SiteTitle = styled.h1`
   ${rem('font-size', 22)}
-  color: ${primaryColor()};
+  color: white;
   position: relative;
   z-index: 100;
   transition: .8s ease color;
@@ -113,9 +123,11 @@ export const SiteTitle = styled.h1`
  */
 export const SiteSubtitle = styled.h2`
   ${rem('font-size', 44)}
-  color: ${secondaryColor()};
-  text-shadow: 3.4px 1px 10px rgba(23, 23, 23, .7);
-  text-decoration: underline;
+  width: 100%;
+  color: white;
+  background: -webkit-linear-gradient(left, #528ce7 0, #ac3dd5 220px);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: -6px;
 `;
 
@@ -170,21 +182,24 @@ export const SiteNav = styled.ul`
  * SiteNavItem
  */
 export const SiteNavItem = styled.li`
-  right: -150px;
+  right: -160px;
   position: relative;
   ${rem('font-size', 18)}
   ${rem('margin-bottom', 10)}
 
+  ${ media.desktop`
+    right: -190px;
+  ` }
+
   a {
-    color: ${primaryColor()};
+    color: white;
     text-decoration: none;
-    transition: .2s ease color;
 
     &:visited, &:focus {
-      color: ${primaryColor()};
+      color: white;
     }
     &:hover {
-      color: ${secondaryColor()};
+      border-bottom: 2px solid white;
     }
   }
 `;

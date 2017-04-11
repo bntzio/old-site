@@ -1,19 +1,24 @@
 import { css } from 'styled-components';
 
 /* variables (functions) */
-export function primaryColor() {
+export function gradientColorA() {
   return `
-    #ff695c;
+    #528ce7;
   `;
 }
-export function secondaryColor() {
+export function gradientColorB() {
   return `
-    #FF965C;
+    #ac3dd5;
+  `;
+}
+export function primaryColor() {
+  return `
+    #ff3b6b;
   `;
 }
 export function headingsColor() {
   return `
-    #162C42;
+    #1d2637;
   `;
 }
 export function textColor() {
@@ -23,7 +28,7 @@ export function textColor() {
 }
 export function mainBgColor() {
   return `
-    #162C42;
+    #1d2637;
   `;
 }
 export function mainTextColor() {
