@@ -31,6 +31,11 @@ export function mainBgColor() {
     #1d2637;
   `;
 }
+export function alternateBgColor() {
+  return `
+    #151d2a;
+  `;
+}
 export function mainTextColor() {
   return `
     #8c949f;

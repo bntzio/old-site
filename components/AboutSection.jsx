@@ -2,9 +2,10 @@ import React from 'react';
 import {
   AboutPage,
   AboutPageContainer,
+  ProfileImage,
   Row,
   Column,
-  SectionTitle,
+  AboutPageTitle,
   SectionDescription
 } from './styled/';
 
@@ -34,7 +35,8 @@ export default class AboutSection extends React.Component {
         <AboutPageContainer id="aboutPageContainer">
           <Row divisions={12}>
             <Column>
-              <SectionTitle className="primaryFont">whoami</SectionTitle>
+              <ProfileImage small />
+              <AboutPageTitle pushLeft className="primaryFont">whoami</AboutPageTitle>
               <SectionDescription className="secondaryFont">
                 My name is Enrique, I'm a 22 years old guy and school dropout who is self-taught at everything.
               </SectionDescription>

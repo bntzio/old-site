@@ -7,6 +7,7 @@ import {
   headingsColor,
   textColor,
   mainBgColor,
+  alternateBgColor,
   mainTextColor,
   gradientColorA
 } from './style-utils';
@@ -94,6 +95,27 @@ export const Column = styled(HedronColumn)`
 `;
 
 /*
+ * SectionTitle
+ */
+export const SectionTitle = styled.h3`
+  margin: 0;
+  ${rem('font-size', 32)};
+  ${rem('margin-bottom', 35)};
+  color: white;
+  display: inline-block;
+`;
+
+/*
+ * SectionDescription
+ */
+export const SectionDescription = styled.p`
+  margin: 0;
+  color: ${textColor()};
+  ${rem('margin-bottom', 12.5)};
+  font-size: ${props => props.small ? '14px' : '18px'};
+`;
+
+/*
  * MainPage
  */
 export const MainPage = styled(Page)`
@@ -161,6 +183,18 @@ export const AboutPageContainer = styled.div`
   opacity: 0;
   transition: .7s ease-out all;
   margin-bottom: 200px;
+  position: relative;
+`;
+
+/*
+ * AboutPageTitle
+ */
+export const AboutPageTitle = styled(SectionTitle)`
+  padding-left: ${props => props.pushLeft ? '70px' : '0'};
+  background: ${alternateBgColor()};
+  border-radius: 20px;
+  padding-right: 20px;
+  padding-bottom: 6px;
 `;
 
 /*
@@ -468,26 +502,21 @@ export const GoodbyeMessage = styled.p`
 `;
 
 /*
- * SectionTitle
+ * ProfileImage
  */
-export const SectionTitle = styled.h3`
-  margin: 0;
-  ${rem('font-size', 32)};
-  ${rem('margin-bottom', 35)};
-  color: white;
-  background: -webkit-linear-gradient(left, #528ce7 0, #ac3dd5 120px);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  border-bottom: 3px solid ${gradientColorA()};
-  display: inline-block;
-`;
-
-/*
- * SectionDescription
- */
-export const SectionDescription = styled.p`
-  margin: 0;
-  color: ${textColor()};
-  ${rem('margin-bottom', 12.5)};
-  font-size: ${props => props.small ? '14px' : '18px'};
+export const ProfileImage = styled.div`
+  position: absolute;
+  left: 0;
+  top: 4px;
+  background: url('/images/profile.jpg');
+  width: 26px;
+  height: 26px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-width: 10px;
+  padding: 1rem;
+  background-color: ${alternateBgColor()};
+  border-color: ${alternateBgColor()};
+  border-style: solid;
+  border-radius: 9999px;
 `;
