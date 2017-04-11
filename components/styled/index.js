@@ -8,8 +8,7 @@ import {
   textColor,
   mainBgColor,
   alternateBgColor,
-  mainTextColor,
-  gradientColorA
+  mainTextColor
 } from './style-utils';
 import {
   Page as HedronPage,
@@ -133,7 +132,6 @@ export const IndexPage = styled(MainPage)`
  */
 export const HeroPage = styled(MainPage)`
   background-color: ${mainBgColor()}
-  background-image: url('/images/topography.svg');
 
   ${rem('padding-top', 10)}
   ${rem('padding-right', 20)}
