@@ -12,9 +12,6 @@ import {
 } from '../components/styled/';
 
 export default class Goodbye extends React.Component {
-  exitSite() {
-    window.close();
-  }
   render() {
     const { route } = this.props;
     const post = route.page.file;
