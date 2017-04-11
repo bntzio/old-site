@@ -7,7 +7,8 @@ import {
   headingsColor,
   textColor,
   mainBgColor,
-  mainTextColor
+  mainTextColor,
+  gradientColorA
 } from './style-utils';
 import {
   Page as HedronPage,
@@ -31,6 +32,13 @@ injectGlobal`
     position: relative;
     overflow: hidden;
     height: 100%;
+  }
+
+  .fade-in {
+    opacity: 1 !important;
+  }
+  .fade-out {
+    opacity: 0 !important;
   }
 `;
 
@@ -89,10 +97,22 @@ export const Column = styled(HedronColumn)`
  * MainPage
  */
 export const MainPage = styled(Page)`
+  box-sizing: border-box;
+`;
+
+/*
+ * IndexPage
+ */
+export const IndexPage = styled(MainPage)`
+`;
+
+/*
+ * HeroPage
+ */
+export const HeroPage = styled(MainPage)`
   background-color: ${mainBgColor()}
   background-image: url('/images/topography.svg');
-  ${rem('padding', 25)}
-  box-sizing: border-box;
+
   ${rem('padding-top', 10)}
   ${rem('padding-right', 20)}
   ${rem('padding-bottom', 10)}
@@ -105,6 +125,42 @@ export const MainPage = styled(Page)`
   ${ media.desktop`
     padding: 30px 60px;
   ` }
+`;
+
+/*
+ * AboutPage
+ */
+export const AboutPage = styled(MainPage)`
+  background-color: ${mainBgColor()};
+  transition: all 1s ease-out;
+  ${rem('padding-top', 10)}
+  ${rem('padding-right', 20)}
+  ${rem('padding-bottom', 10)}
+  ${rem('padding-left', 20)}
+
+  ${ media.tablet`
+    padding: 20px 40px;
+  ` }
+
+  ${ media.desktop`
+    padding: 30px 60px;
+  ` }
+`;
+
+/*
+ * HeroPageContainer
+ */
+export const HeroPageContainer = styled.div`
+  transition: .7s ease-out all;
+`;
+
+/*
+ * AboutPageContainer
+ */
+export const AboutPageContainer = styled.div`
+  opacity: 0;
+  transition: .7s ease-out all;
+  margin-bottom: 200px;
 `;
 
 /*
@@ -409,4 +465,29 @@ export const GoodbyeMessage = styled.p`
     padding: 0 120px;
     font-size: 18px;
   ` }
+`;
+
+/*
+ * SectionTitle
+ */
+export const SectionTitle = styled.h3`
+  margin: 0;
+  ${rem('font-size', 32)};
+  ${rem('margin-bottom', 35)};
+  color: white;
+  background: -webkit-linear-gradient(left, #528ce7 0, #ac3dd5 120px);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 3px solid ${gradientColorA()};
+  display: inline-block;
+`;
+
+/*
+ * SectionDescription
+ */
+export const SectionDescription = styled.p`
+  margin: 0;
+  color: ${textColor()};
+  ${rem('margin-bottom', 12.5)};
+  font-size: ${props => props.small ? '14px' : '18px'};
 `;

@@ -23,7 +23,7 @@ export function headingsColor() {
 }
 export function textColor() {
   return `
-    #162C42;
+    #8c949f;
   `;
 }
 export function mainBgColor() {

@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 import * as icons from '../helpers/icons.yaml';
 import {
+  HeroPage,
+  HeroPageContainer,
   Row,
   Column,
   SiteTitle,
@@ -107,92 +109,94 @@ export default class Hero extends React.Component {
   }
   render() {
     return (
-      <div>
-        <OverlayContent id="overlayContent">
-          <Column>
-            <OverlayMenu id="overlayMenu">
-              <OverlayMenuItem className="overlayItem">
-                <Column>
-                  <Link to="#">Blog</Link>
-                </Column>
-                <Column>
-                  <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.blog } } />
-                </Column>
-              </OverlayMenuItem>
-              <OverlayMenuItem className="overlayItem">
-                <Column>
-                  <Link to="#">Projects</Link>
-                </Column>
-                <Column>
-                  <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.projects } } />
-                </Column>
-              </OverlayMenuItem>
-              <OverlayMenuItem className="overlayItem">
-                <Column>
-                  <Link to="#">Experiments</Link>
-                </Column>
-                <Column>
-                  <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.experiments } } />
-                </Column>
-              </OverlayMenuItem>
-              <OverlayMenuItem className="overlayItem">
-                <Column>
-                  <Link to="#">Courses</Link>
-                </Column>
-                <Column>
-                  <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.courses } } />
-                </Column>
-              </OverlayMenuItem>
-              <OverlayMenuItem className="overlayItem">
-                <Column>
-                </Column>
-                  <Link to="#">Newsletter</Link>
-                <Column>
-                  <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.newsletter } } />
-                </Column>
-              </OverlayMenuItem>
-              <OverlayMenuItem className="overlayItem">
-                <Column>
-                  <Link to="#">About</Link>
-                </Column>
-                <Column>
-                  <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.about } } />
-                </Column>
-              </OverlayMenuItem>
-            </OverlayMenu>
-          </Column>
-        </OverlayContent>
-        <Row divisions={12}>
-          <Column xs={10}>
-            <SiteTitle className="logo">Enrique Benitez</SiteTitle>
-          </Column>
-          <IconContainer xs={2}>
-            <Icon onClick={this.toggleMenu} pointer small fill color="white" dangerouslySetInnerHTML={ { __html: this.state.showMenu ? icons.close : icons.menu } } />
-            <OverlayIcon id="overlayIcon" dangerouslySetInnerHTML={ { __html: icons.overlay } } />
-          </IconContainer>
-        </Row>
-        <Row divisions={12}>
-          <Column xs={11} md={6}>
-            <SiteSubtitle className="subtitle">I Make Stuff.</SiteSubtitle>
-            <SiteDescription className="description">
-              I'm a maker who crafts beautiful digital products.
-            </SiteDescription>
-            <SiteMessage className="message">
-              Scroll down to learn more, or say <Link to="/goodbye/">goodbye</Link>.
-            </SiteMessage>
-          </Column>
-          <Column xs={1} md={6}>
-            <SiteNav className="nav">
-              <SiteNavItem className="nav-item"><Link to="#">Blog</Link></SiteNavItem>
-              <SiteNavItem className="nav-item"><Link to="#">Projects</Link></SiteNavItem>
-              <SiteNavItem className="nav-item"><Link to="#">Experiments</Link></SiteNavItem>
-              <SiteNavItem className="nav-item"><Link to="#">Courses</Link></SiteNavItem>
-              <SiteNavItem className="nav-item"><Link to="#">Newsletter</Link></SiteNavItem>
-              <SiteNavItem className="nav-item"><Link to="#">About</Link></SiteNavItem>
-            </SiteNav>
-          </Column>
-        </Row>
-      </div>
+      <HeroPage fluid>
+        <HeroPageContainer id="heroPageContainer">
+          <OverlayContent id="overlayContent">
+            <Column>
+              <OverlayMenu id="overlayMenu">
+                <OverlayMenuItem className="overlayItem">
+                  <Column>
+                    <Link to="#">Blog</Link>
+                  </Column>
+                  <Column>
+                    <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.blog } } />
+                  </Column>
+                </OverlayMenuItem>
+                <OverlayMenuItem className="overlayItem">
+                  <Column>
+                    <Link to="#">Projects</Link>
+                  </Column>
+                  <Column>
+                    <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.projects } } />
+                  </Column>
+                </OverlayMenuItem>
+                <OverlayMenuItem className="overlayItem">
+                  <Column>
+                    <Link to="#">Experiments</Link>
+                  </Column>
+                  <Column>
+                    <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.experiments } } />
+                  </Column>
+                </OverlayMenuItem>
+                <OverlayMenuItem className="overlayItem">
+                  <Column>
+                    <Link to="#">Courses</Link>
+                  </Column>
+                  <Column>
+                    <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.courses } } />
+                  </Column>
+                </OverlayMenuItem>
+                <OverlayMenuItem className="overlayItem">
+                  <Column>
+                  </Column>
+                    <Link to="#">Newsletter</Link>
+                  <Column>
+                    <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.newsletter } } />
+                  </Column>
+                </OverlayMenuItem>
+                <OverlayMenuItem className="overlayItem">
+                  <Column>
+                    <Link to="#">About</Link>
+                  </Column>
+                  <Column>
+                    <Icon small stroke color="white" dangerouslySetInnerHTML={ { __html: icons.about } } />
+                  </Column>
+                </OverlayMenuItem>
+              </OverlayMenu>
+            </Column>
+          </OverlayContent>
+          <Row divisions={12}>
+            <Column xs={10}>
+              <SiteTitle className="logo">Enrique Benitez</SiteTitle>
+            </Column>
+            <IconContainer xs={2}>
+              <Icon onClick={this.toggleMenu} pointer small fill color="white" dangerouslySetInnerHTML={ { __html: this.state.showMenu ? icons.close : icons.menu } } />
+              <OverlayIcon id="overlayIcon" dangerouslySetInnerHTML={ { __html: icons.overlay } } />
+            </IconContainer>
+          </Row>
+          <Row divisions={12}>
+            <Column xs={11} md={6}>
+              <SiteSubtitle className="subtitle">I Make Stuff.</SiteSubtitle>
+              <SiteDescription className="description">
+                I'm a maker who crafts beautiful digital products.
+              </SiteDescription>
+              <SiteMessage className="message">
+                Scroll down to learn more, or say <Link to="/goodbye/">goodbye</Link>.
+              </SiteMessage>
+            </Column>
+            <Column xs={1} md={6}>
+              <SiteNav className="nav">
+                <SiteNavItem className="nav-item"><Link to="#">Blog</Link></SiteNavItem>
+                <SiteNavItem className="nav-item"><Link to="#">Projects</Link></SiteNavItem>
+                <SiteNavItem className="nav-item"><Link to="#">Experiments</Link></SiteNavItem>
+                <SiteNavItem className="nav-item"><Link to="#">Courses</Link></SiteNavItem>
+                <SiteNavItem className="nav-item"><Link to="#">Newsletter</Link></SiteNavItem>
+                <SiteNavItem className="nav-item"><Link to="#">About</Link></SiteNavItem>
+              </SiteNav>
+            </Column>
+          </Row>
+        </HeroPageContainer>
+      </HeroPage>
     );
   }
 }
