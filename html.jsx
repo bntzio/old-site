@@ -23,7 +23,11 @@ module.exports = React.createClass({
     let fonts = <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/52312399-4b05-4128-b29c-2881eca832a7.css"/>;
     let gsap = <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>;
     let scrollMagic = <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>;
-    let scrollMagicIndicators = <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+
+    let scrollMagicIndicators;
+    if (process.env.NODE_ENV !== 'production') {
+      scrollMagicIndicators = <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    }
 
     return (
       <html lang="en">
