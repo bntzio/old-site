@@ -4,6 +4,7 @@ import { config } from 'config';
 import { IndexPage } from '../components/styled/';
 import Hero from '../components/Hero';
 import AboutSection from '../components/AboutSection';
+import SkillsSection from '../components/SkillsSection';
 
 export default class Index extends React.Component {
   render() {
@@ -12,6 +13,7 @@ export default class Index extends React.Component {
         <Helmet title={config.siteTitle} meta={[{ 'name': 'description', 'content': config.siteDescription }]} />
         <Hero />
         <AboutSection />
+        <SkillsSection />
       </IndexPage>
     );
   }

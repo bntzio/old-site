@@ -21,6 +21,7 @@ module.exports = React.createClass({
     }
 
     let fonts = <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/52312399-4b05-4128-b29c-2881eca832a7.css"/>;
+    let animateCss = <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>;
     let gsap = <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>;
     let scrollMagic = <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>;
 
@@ -39,6 +40,7 @@ module.exports = React.createClass({
           {head.meta.toComponent()}
           {css}
           {fonts}
+          {animateCss}
           {gsap}
           {scrollMagic}
           {scrollMagicIndicators}

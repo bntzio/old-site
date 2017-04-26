@@ -8,7 +8,8 @@ import {
   textColor,
   mainBgColor,
   alternateBgColor,
-  mainTextColor
+  mainTextColor,
+  primaryColor
 } from './style-utils';
 import {
   Page as HedronPage,
@@ -39,6 +40,31 @@ injectGlobal`
   }
   .fade-out {
     opacity: 0 !important;
+  }
+
+  .textCenter {
+    text-align: center;
+  }
+  .textLeft {
+    text-align: left;
+  }
+  .textRight {
+    text-align: right;
+  }
+
+  .noPadding {
+    padding: 0;
+  }
+  .noMargin {
+    margin: 0;
+  }
+
+  .bold {
+    font-weight: 900;
+  }
+
+  .skillItem {
+    animation-delay: .3s;
   }
 `;
 
@@ -148,9 +174,9 @@ export const HeroPage = styled(MainPage)`
 `;
 
 /*
- * AboutPage
+ * SectionPage
  */
-export const AboutPage = styled(MainPage)`
+export const SectionPage = styled(MainPage)`
   background-color: ${mainBgColor()};
   transition: all 1s ease-out;
   ${rem('padding-top', 10)}
@@ -175,24 +201,34 @@ export const HeroPageContainer = styled.div`
 `;
 
 /*
- * AboutPageContainer
+ * SectionPageContainer
  */
-export const AboutPageContainer = styled.div`
+export const SectionPageContainer = styled.div`
   opacity: 0;
   transition: .7s ease-out all;
-  margin-bottom: 200px;
   position: relative;
 `;
 
 /*
- * AboutPageTitle
+ * AboutSectionTitle
  */
-export const AboutPageTitle = styled(SectionTitle)`
+export const AboutSectionTitle = styled(SectionTitle)`
   padding-left: ${props => props.pushLeft ? '70px' : '0'};
   background: ${alternateBgColor()};
   border-radius: 20px;
   padding-right: 20px;
   padding-bottom: 6px;
+`;
+
+/*
+ * SkillsSectionTitle
+ */
+export const SkillsSectionTitle = styled(SectionTitle)`
+  display: inline-flex;
+  justify-content: center;
+  border-bottom: 5px solid ${alternateBgColor()};
+  padding-bottom: 2.5px;
+  margin-bottom: 0;
 `;
 
 /*
@@ -377,6 +413,46 @@ export const Icon = styled.div`
 `;
 
 /*
+ * SkillIcon
+ */
+export const SkillIcon = styled.span`
+  position: absolute;
+  z-index: 1;
+  ${rem('margin-top', -4)};
+  ${rem('margin-left', -22)};
+  background: ${alternateBgColor()};
+  ${rem('padding', 6)};
+  border-color: ${alternateBgColor()};
+  border-style: solid;
+  ${rem('border-radius', 9999)};
+  ${rem('width', 12)};
+  ${rem('height', 12)};
+
+  ${ media.tablet`
+    margin-top: -6px;
+    margin-left: -32px;
+    padding: 8px;
+    width: 18px;
+    height: 18px;
+  ` }
+
+  svg {
+    ${rem('width', 12)};
+    ${rem('height', 12)};
+
+    ${ media.tablet`
+      width: 18px;
+      height: 18px;
+    ` }
+
+    path, polygon, polyline, rect, line, circle {
+      fill: ${props => props.fill};
+      stroke: ${props => props.stroke};
+    }
+  }
+`;
+
+/*
  * OverlayIcon
  */
 export const OverlayIcon = styled.div`
@@ -517,4 +593,72 @@ export const ProfileImage = styled.div`
   border-color: ${alternateBgColor()};
   border-style: solid;
   border-radius: 9999px;
+`;
+
+/*
+ * SkillsListContainer
+ */
+export const SkillsListContainer = styled(Row)`
+  display: flex;
+  width: 33.333333%;
+  justify-content: ${ props => props.justifyContent };
+  ${rem('margin-bottom', 10)};
+`;
+
+/*
+ * SkillsList
+ */
+export const SkillsList = styled.ul`
+  list-style-type: none;
+  padding-left: 0;
+`;
+
+/*
+ * SkillsListItem
+ */
+export const SkillsListItem = styled.li`
+  background: ${alternateBgColor()};
+  ${rem('padding-top', 5)};
+  ${rem('padding-right', 10)};
+  ${rem('padding-bottom', 5)};
+  ${rem('padding-left', 10)};
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  ${rem('font-size', 12)};
+
+  ${ media.tablet`
+    font-size: 16px;
+  ` }
+`;
+
+/*
+ * PrimaryButtonContainer
+ */
+export const PrimaryButtonContainer = styled(Row)`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  ${rem('margin-top', 35)};
+`;
+
+/*
+ * PrimaryButton
+ */
+export const PrimaryButton = styled.button`
+  background: transparent;
+  color: ${primaryColor()};
+  ${rem('padding-top', 15)};
+  ${rem('padding-right', 30)};
+  ${rem('padding-bottom', 15)};
+  ${rem('padding-left', 30)};
+  border: 2px solid ${primaryColor()};
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all .6s;
+
+  &:hover {
+    background: ${primaryColor()};
+    color: white;
+  }
 `;

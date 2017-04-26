@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  AboutPage,
-  AboutPageContainer,
+  SectionPage,
+  SectionPageContainer,
   ProfileImage,
   Row,
   Column,
-  AboutPageTitle,
+  AboutSectionTitle,
   SectionDescription
 } from './styled/';
 
@@ -31,12 +31,12 @@ export default class AboutSection extends React.Component {
   }
   render() {
     return (
-      <AboutPage fluid>
-        <AboutPageContainer id="aboutPageContainer">
+      <SectionPage fluid>
+        <SectionPageContainer id="aboutPageContainer">
           <Row divisions={12}>
             <Column>
               <ProfileImage small />
-              <AboutPageTitle pushLeft className="primaryFont">whoami</AboutPageTitle>
+              <AboutSectionTitle pushLeft className="primaryFont">whoami</AboutSectionTitle>
               <SectionDescription className="secondaryFont">
                 My name is Enrique, I'm a 22 years old guy and school dropout who is self-taught at everything.
               </SectionDescription>
@@ -52,8 +52,8 @@ export default class AboutSection extends React.Component {
               </SectionDescription>
             </Column>
           </Row>
-        </AboutPageContainer>
-      </AboutPage>
+        </SectionPageContainer>
+      </SectionPage>
     );
   }
 }
