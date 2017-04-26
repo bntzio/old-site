@@ -232,6 +232,12 @@ export const SkillsSectionTitle = styled(SectionTitle)`
 `;
 
 /*
+ * ProjectsSectionTitle
+ */
+export const ProjectsSectionTitle = styled(SkillsSectionTitle)`
+`;
+
+/*
  * SiteTitle
  */
 export const SiteTitle = styled.h1`
@@ -660,5 +666,81 @@ export const PrimaryButton = styled.button`
   &:hover {
     background: ${primaryColor()};
     color: white;
+  }
+`;
+
+/*
+ * ProjectCardContainer
+ */
+export const ProjectCardContainer = styled(Row)`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+`;
+
+/*
+ * ProjectCard
+ */
+export const ProjectCard = styled.div`
+  width: 100%;
+  height: 300px;
+  background: ${alternateBgColor()};
+  margin-bottom: 50px;
+  cursor: pointer;
+  opacity: .8;
+  color: 'white';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all .8s;
+
+  ${ media.tablet`
+    width: 48%;
+  ` }
+
+  ${ media.desktop`
+    width: 30%;
+  ` }
+
+  &:hover {
+    opacity: 1;
+    background: ${ props => props.bgColor };
+    color: ${ props => props.textColor || 'white' };
+  }
+`;
+
+/*
+ * ProjectCardTitle
+ */
+export const ProjectCardTitle = styled.h2`
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  font-size: 26px;
+  padding: 0 25px;
+`;
+
+/*
+ * ProjectCardDescription
+ */
+export const ProjectCardDescription = styled.p`
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  padding: 0 50px;
+`;
+
+/*
+ * ProjectCardLink
+ */
+export const ProjectCardLink = styled.a`
+  color: inherit;
+  text-decoration: none;
+
+  &:hover, &:visited, &:focus {
+    color: inherit;
+    text-decoration: none;
   }
 `;

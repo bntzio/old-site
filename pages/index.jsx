@@ -5,6 +5,7 @@ import { IndexPage } from '../components/styled/';
 import Hero from '../components/Hero';
 import AboutSection from '../components/AboutSection';
 import SkillsSection from '../components/SkillsSection';
+import ProjectsSection from '../components/ProjectsSection';
 
 export default class Index extends React.Component {
   render() {
@@ -14,6 +15,7 @@ export default class Index extends React.Component {
         <Hero />
         <AboutSection />
         <SkillsSection />
+        <ProjectsSection />
       </IndexPage>
     );
   }
