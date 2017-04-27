@@ -16,7 +16,7 @@ import {
   FooterLink
 } from './styled/';
 
-export default class ContactSection extends React.Component {
+export default class Footer extends React.Component {
   componentDidMount() {
     const controller = new ScrollMagic.Controller();
     const scene1 = new ScrollMagic.Scene({
