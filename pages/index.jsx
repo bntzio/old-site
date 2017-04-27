@@ -6,6 +6,7 @@ import Hero from '../components/Hero';
 import AboutSection from '../components/AboutSection';
 import SkillsSection from '../components/SkillsSection';
 import ProjectsSection from '../components/ProjectsSection';
+import ContactSection from '../components/ContactSection';
 
 export default class Index extends React.Component {
   render() {
@@ -16,6 +17,7 @@ export default class Index extends React.Component {
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
+        <ContactSection />
       </IndexPage>
     );
   }

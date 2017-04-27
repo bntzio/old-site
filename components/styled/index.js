@@ -66,6 +66,62 @@ injectGlobal`
   .skillItem {
     animation-delay: .3s;
   }
+
+  [data-social-item="instagram"] {
+    &:hover {
+      color: #e1306c !important;
+
+      svg {
+        path, polygon, polyline, rect, line, circle {
+          fill: #e1206c !important;
+        }
+      }
+    }
+  }
+  [data-social-item="snapchat"] {
+    &:hover {
+      color: #fffc00 !important;
+
+      svg {
+        path, polygon, polyline, rect, line, circle {
+          fill: #fffc00 !important;
+        }
+      }
+    }
+  }
+  [data-social-item="facebook"] {
+    &:hover {
+      color: #3b5998 !important;
+
+      svg {
+        path, polygon, polyline, rect, line, circle {
+          fill: #3b5998 !important;
+        }
+      }
+    }
+  }
+  [data-social-item="twitter"] {
+    &:hover {
+      color: #1da1f2 !important;
+
+      svg {
+        path, polygon, polyline, rect, line, circle {
+          fill: #1da1f2 !important;
+        }
+      }
+    }
+  }
+  [data-social-item="email"] {
+    &:hover {
+      color: #c68143 !important;
+
+      svg {
+        path, polygon, polyline, rect, line, circle {
+          fill: #c68143 !important;
+        }
+      }
+    }
+  }
 `;
 
 /*
@@ -207,6 +263,7 @@ export const SectionPageContainer = styled.div`
   opacity: 0;
   transition: .7s ease-out all;
   position: relative;
+  margin-bottom: 150px;
 `;
 
 /*
@@ -743,4 +800,75 @@ export const ProjectCardLink = styled.a`
     color: inherit;
     text-decoration: none;
   }
+`;
+
+
+/*
+ * ContactContainer
+ */
+export const ContactContainer = styled.div`
+  width: 100%;
+  display: flex;
+`;
+
+/*
+ * ContactList
+ */
+export const ContactList = styled.ul`
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+
+  ${ media.desktop`
+    flex-direction: row;
+  ` }
+`;
+
+/*
+ * ContactListItem
+ */
+export const ContactListItem = styled.a`
+  ${rem('margin-bottom', 20)};
+  display: flex;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  transition: .7s all;
+
+  ${ media.desktop`
+    margin-bottom: 0;
+    margin-right: 20px;
+  ` }
+
+  &:hover, &:focus, &:visited {
+    color: white;
+    text-decoration: none;
+  }
+`;
+
+/*
+ * ContactSocialIcon
+ */
+export const ContactSocialIcon = styled.div`
+  display: flex;
+
+  svg {
+    ${rem('width', 16)};
+    ${rem('height', 16)};
+
+    path, polygon, polyline, rect, line, circle {
+      transition: .7s all;
+      fill: ${props => props.fill};
+      stroke: ${props => props.stroke};
+    }
+  }
+`;
+
+/*
+ * ContactSocialName
+ */
+export const ContactSocialName = styled.div`
+  display: flex;
+  ${rem('margin-left', 5)};
 `;
