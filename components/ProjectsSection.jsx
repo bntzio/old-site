@@ -12,7 +12,7 @@ import {
   ProjectCardLink
 } from './styled/';
 
-export default class AboutSection extends React.Component {
+export default class ProjectsSection extends React.Component {
   componentDidMount() {
     const controller = new ScrollMagic.Controller();
     const scene1 = new ScrollMagic.Scene({

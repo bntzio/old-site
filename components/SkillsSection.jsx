@@ -14,7 +14,7 @@ import {
   PrimaryButton
 } from './styled/';
 
-export default class AboutSection extends React.Component {
+export default class SkillsSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = { showMoreSkills: false };
