@@ -45,7 +45,7 @@ export default class ContactSection extends React.Component {
                 You can connect with me on any of these networks! I love to talk! 😄
               </SectionDescription>
               <ContactContainer>
-                <ContactList className="secondaryFont">
+                <ContactList className="secondaryFont" id="contactList">
                   <ContactListItem href="https://twitter.com/bntzio" target="_blank" data-social-item="twitter">
                     <ContactSocialIcon fill="white" dangerouslySetInnerHTML={ { __html: icons.twitter } } />
                     <ContactSocialName>Twitter</ContactSocialName>

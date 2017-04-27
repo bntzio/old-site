@@ -7,6 +7,7 @@ import AboutSection from '../components/AboutSection';
 import SkillsSection from '../components/SkillsSection';
 import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
 
 export default class Index extends React.Component {
   render() {
@@ -18,6 +19,7 @@ export default class Index extends React.Component {
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />
+        <Footer />
       </IndexPage>
     );
   }

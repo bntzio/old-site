@@ -41,6 +41,10 @@ injectGlobal`
   .fade-out {
     opacity: 0 !important;
   }
+  .jump-in-up {
+    opacity: 1 !important;
+    transform: translateY(0px) !important;
+  }
 
   .textCenter {
     text-align: center;
@@ -50,6 +54,14 @@ injectGlobal`
   }
   .textRight {
     text-align: right;
+  }
+
+  .footer-logo {
+    margin-bottom: 6px !important;
+  }
+
+  .pullUp {
+    margin-top: -10px !important;
   }
 
   .noPadding {
@@ -263,7 +275,31 @@ export const SectionPageContainer = styled.div`
   opacity: 0;
   transition: .7s ease-out all;
   position: relative;
-  margin-bottom: 150px;
+`;
+
+/*
+ * FooterPageContainer
+ */
+export const FooterPageContainer = styled(SectionPageContainer)`
+  transform: translateY(100px);
+`;
+
+/*
+ * FooterSectionPage
+ */
+export const FooterSectionPage = styled(MainPage)`
+  background: ${alternateBgColor()};
+  transition: all 1s ease-out;
+  text-align: center;
+  ${rem('padding', 20)};
+
+  ${ media.tablet`
+    padding: 20px 40px;
+  ` }
+
+  ${ media.desktop`
+    padding: 30px 60px;
+  ` }
 `;
 
 /*
@@ -809,6 +845,8 @@ export const ProjectCardLink = styled.a`
 export const ContactContainer = styled.div`
   width: 100%;
   display: flex;
+  ${rem('margin-top', 35)};
+  ${rem('margin-bottom', 35)};
 `;
 
 /*
@@ -871,4 +909,79 @@ export const ContactSocialIcon = styled.div`
 export const ContactSocialName = styled.div`
   display: flex;
   ${rem('margin-left', 5)};
+`;
+
+
+/*
+ * SocialMediaContainer
+ */
+export const SocialMediaContainer = styled.div`
+  ${rem('margin-top', 25)};
+  display: flex;
+  justify-content: space-around;
+`;
+
+/*
+ * SocialMediaList
+ */
+export const SocialMediaList = styled.ul`
+  list-style-type: none;
+  padding-left: 0;
+`;
+
+/*
+ * SocialMediaListItem
+ */
+export const SocialMediaListItem = styled.li`
+`;
+
+/*
+ * SocialMediaLink
+ */
+export const SocialMediaLink = styled.a`
+`;
+
+/*
+ * SocialMediaIcon
+ */
+export const SocialMediaIcon = styled.span`
+  svg {
+    ${rem('width', 20)};
+    ${rem('height', 20)};
+
+    &:hover {
+      path, polygon, polyline, rect, line, circle {
+        fill: ${ props => props.fill };
+      }
+    }
+
+    path, polygon, polyline, rect, line, circle {
+      transition: .5s all;
+      fill: white;
+    }
+  }
+`;
+
+/*
+ * FooterLinkContainer
+ */
+export const FooterLinkContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+/*
+ * FooterLink
+ */
+export const FooterLink = styled.a`
+  ${rem('font-size', 18)};
+  ${rem('margin-bottom', 15)};
+  color: white;
+  text-decoration: none;
+
+  &:hover, &:visited, &:focus {
+    color: white;
+    text-decoration: none;
+  }
 `;
