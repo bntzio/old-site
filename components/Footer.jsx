@@ -12,6 +12,7 @@ import {
   SocialMediaListItem,
   SocialMediaLink,
   SocialMediaIcon,
+  MainFooterLinkContainer,
   FooterLinkContainer,
   FooterLink
 } from './styled/';
@@ -27,7 +28,6 @@ export default class Footer extends React.Component {
 
     if (process.env.NODE_ENV !== 'production') {
       scene1.addIndicators();
-      scene2.addIndicators();
     }
   }
   render() {
@@ -129,24 +129,24 @@ export default class Footer extends React.Component {
                 </SocialMediaList>
               </SocialMediaContainer>
             </Column>
-            <Column xs={12} lg={4}>
-              <FooterLinkContainer className="nav">
-                <FooterLink href="#">Blog</FooterLink>
-                <FooterLink href="#">Projects</FooterLink>
-                <FooterLink href="#">Experiments</FooterLink>
-                <FooterLink href="#">Courses</FooterLink>
-                <FooterLink href="#">Newsletter</FooterLink>
-                <FooterLink href="#">About</FooterLink>
-              </FooterLinkContainer>
-            </Column>
-            <Column xs={12} lg={4}>
-              <FooterLinkContainer className="nav">
-                <FooterLink href="#">Now</FooterLink>
-                <FooterLink href="#">Public journal</FooterLink>
-                <FooterLink href="#">Book reviews</FooterLink>
-                <FooterLink href="#">Best articles</FooterLink>
-                <FooterLink href="#">Tools</FooterLink>
-              </FooterLinkContainer>
+            <Column xs={12} lg={8}>
+              <MainFooterLinkContainer>
+                <FooterLinkContainer className="nav nav-main">
+                  <FooterLink href="#">Blog</FooterLink>
+                  <FooterLink href="#">Projects</FooterLink>
+                  <FooterLink href="#">Experiments</FooterLink>
+                  <FooterLink href="#">Courses</FooterLink>
+                  <FooterLink href="#">Newsletter</FooterLink>
+                  <FooterLink href="#">About</FooterLink>
+                </FooterLinkContainer>
+                <FooterLinkContainer className="nav nav-secondary">
+                  <FooterLink href="#">Now</FooterLink>
+                  <FooterLink href="#">Public journal</FooterLink>
+                  <FooterLink href="#">Book reviews</FooterLink>
+                  <FooterLink href="#">Best articles</FooterLink>
+                  <FooterLink href="#">Tools</FooterLink>
+                </FooterLinkContainer>
+              </MainFooterLinkContainer>
             </Column>
           </Row>
         </FooterPageContainer>

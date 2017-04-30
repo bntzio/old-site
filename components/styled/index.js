@@ -79,6 +79,22 @@ injectGlobal`
     animation-delay: .3s;
   }
 
+  .nav-main {
+    order: 0 !important;
+
+    ${ media.tablet`
+      order: 1 !important;
+    ` }
+  }
+
+  .nav-secondary {
+    order: 1 !important;
+
+    ${ media.tablet`
+      order: 0 !important;
+    ` }
+  }
+
   [data-social-item="instagram"] {
     &:hover {
       color: #e1306c !important;
@@ -960,6 +976,14 @@ export const SocialMediaIcon = styled.span`
       fill: white;
     }
   }
+`;
+
+/*
+ * MainFooterLinkContainer
+ */
+export const MainFooterLinkContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
 `;
 
 /*
