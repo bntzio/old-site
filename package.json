@@ -5,7 +5,9 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop"
+    "develop": "gatsby develop",
+    "storybook-theme": "start-storybook -p 9001 -c .storybooks/.storybook-theme",
+    "storybook-styled": "start-storybook -p 8001 -c .storybooks/.storybook-styled"
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,8 @@
     "moment": "^2.17.1",
     "object-assign": "^4.1.0",
     "polished": "^1.0.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
     "react-helmet": "^3.2.2",
     "recompose": "^0.21.2",
     "styled-components": "^1.2.1",
@@ -45,9 +49,14 @@
     "toml-js": "0.0.8"
   },
   "devDependencies": {
+    "@kadira/react-storybook-addon-info": "^3.4.0",
+    "@kadira/react-storybook-decorator-centered": "^1.1.2",
+    "@kadira/storybook": "^2.35.3",
+    "@kadira/storybook-addon-notes": "^1.0.1",
     "babel-eslint": "^7.2.0",
     "eslint": "^3.x",
     "eslint-plugin-react": "^6.10.3",
+    "react-storybook-decorator-background": "^1.0.5",
     "uuid": "^3.0.1"
   }
 }
