@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { config } from 'config';
 import { IndexPage } from '../components/styled/';
-import Hero from '../components/Hero';
+import MainHero from '../components/MainHero';
 import AboutSection from '../components/AboutSection';
 import SkillsSection from '../components/SkillsSection';
 import ProjectsSection from '../components/ProjectsSection';
@@ -14,7 +14,7 @@ export default class Index extends React.Component {
     return (
       <IndexPage fluid>
         <Helmet title={config.siteTitle} meta={[{ 'name': 'description', 'content': config.siteDescription }]} />
-        <Hero />
+        <MainHero />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />

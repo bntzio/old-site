@@ -20,7 +20,7 @@ import {
   OverlayMenuItem
 } from './styled/';
 
-export default class Hero extends React.Component {
+export default class OldHero extends React.Component {
   constructor(props) {
     super(props);
     this.state = { showMenu: false };
@@ -187,7 +187,7 @@ export default class Hero extends React.Component {
             <Column xs={1} md={6}>
               <SiteNav className="nav">
                 <SiteNavItem className="nav-item"><Link to="#">Blog</Link></SiteNavItem>
-                <SiteNavItem className="nav-item"><Link to="#">Projects</Link></SiteNavItem>
+                <SiteNavItem className="nav-item"><Link to="/projects/">Projects</Link></SiteNavItem>
                 <SiteNavItem className="nav-item"><Link to="#">Experiments</Link></SiteNavItem>
                 <SiteNavItem className="nav-item"><Link to="#">Courses</Link></SiteNavItem>
                 <SiteNavItem className="nav-item"><Link to="#">Newsletter</Link></SiteNavItem>

@@ -5,7 +5,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "storybook-theme": "start-storybook -p 9001 -c .storybooks/.storybook-theme",
     "storybook-styled": "start-storybook -p 8001 -c .storybooks/.storybook-styled"
   },
@@ -40,6 +40,7 @@
     "moment": "^2.17.1",
     "object-assign": "^4.1.0",
     "polished": "^1.0.1",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-helmet": "^3.2.2",

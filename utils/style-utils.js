@@ -54,12 +54,12 @@ export function rem(property, value) {
 export const media = {
   tablet: (...args) => css`
     @media (min-width: 420px) {
-      ${css(args)}
+      ${css(...args)}
     }
   `,
   desktop: (...args) => css`
     @media (min-width: 768px) {
-      ${css(args)}
+      ${css(...args)}
     }
   `
 }

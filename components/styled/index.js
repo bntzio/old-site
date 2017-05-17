@@ -10,7 +10,7 @@ import {
   alternateBgColor,
   mainTextColor,
   primaryColor
-} from './style-utils';
+} from '../../utils/style-utils';
 import {
   Page as HedronPage,
   Row as HedronRow,
