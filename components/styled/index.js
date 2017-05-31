@@ -8,7 +8,6 @@ import {
   textColor,
   mainBgColor,
   alternateBgColor,
-  mainTextColor,
   primaryColor
 } from '../../utils/style-utils';
 import {
@@ -238,26 +237,6 @@ export const IndexPage = styled(MainPage)`
 `;
 
 /*
- * HeroPage
- */
-export const HeroPage = styled(MainPage)`
-  background-color: ${mainBgColor()}
-
-  ${rem('padding-top', 10)}
-  ${rem('padding-right', 20)}
-  ${rem('padding-bottom', 10)}
-  ${rem('padding-left', 20)}
-
-  ${ media.tablet`
-    padding: 20px 40px;
-  ` }
-
-  ${ media.desktop`
-    padding: 30px 60px;
-  ` }
-`;
-
-/*
  * SectionPage
  */
 export const SectionPage = styled(MainPage)`
@@ -275,13 +254,6 @@ export const SectionPage = styled(MainPage)`
   ${ media.desktop`
     padding: 30px 60px;
   ` }
-`;
-
-/*
- * HeroPageContainer
- */
-export const HeroPageContainer = styled.div`
-  transition: .7s ease-out all;
 `;
 
 /*
@@ -347,103 +319,6 @@ export const ProjectsSectionTitle = styled(SkillsSectionTitle)`
 `;
 
 /*
- * SiteTitle
- */
-export const SiteTitle = styled.h1`
-  ${rem('font-size', 22)}
-  color: white;
-  position: relative;
-  z-index: 100;
-  transition: .8s ease color;
-`;
-
-/*
- * SiteSubtitle
- */
-export const SiteSubtitle = styled.h2`
-  ${rem('font-size', 44)}
-  width: 100%;
-  color: white;
-  background: -webkit-linear-gradient(left, #528ce7 0, #ac3dd5 220px);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: -6px;
-`;
-
-/*
- * SiteDescription
- */
-export const SiteDescription = styled.p`
-  ${rem('font-size', 18)}
-  color: ${mainTextColor()}
-`;
-
-/*
- * SiteMessage
- */
-export const SiteMessage = styled.p`
-  display: none;
-  color: ${mainTextColor};
-  text-shadow: 1px 1px 7px rgba(23, 23, 23, .7);
-  ${rem('margin-top', 28)}
-  ${rem('font-size', 13)}
-
-  ${ media.desktop`
-    display: flex;
-  ` }
-
-  a {
-    ${rem('margin-left', 3.2)}
-    color: ${mainTextColor()};
-    text-decoration: underline;
-
-    &:hover, &:focus, &:visited {
-      color: ${mainTextColor()};
-    }
-  }
-`;
-
-/*
- * SiteNav
- */
-export const SiteNav = styled.ul`
-  display: none;
-  flex-direction: column;
-  align-items: flex-end;
-  list-style-type: none;
-  margin-left: 0;
-  ${ media.desktop`
-    display: flex;
-  ` }
-`;
-
-/*
- * SiteNavItem
- */
-export const SiteNavItem = styled.li`
-  right: -160px;
-  position: relative;
-  ${rem('font-size', 18)}
-  ${rem('margin-bottom', 10)}
-
-  ${ media.desktop`
-    right: -190px;
-  ` }
-
-  a {
-    color: white;
-    text-decoration: none;
-
-    &:visited, &:focus {
-      color: white;
-    }
-    &:hover {
-      border-bottom: 2px solid white;
-    }
-  }
-`;
-
-/*
  * HeadingOne
  */
 export const HeadingOne = styled.h1`
@@ -499,35 +374,6 @@ export const PostDate = styled.span`
 `;
 
 /*
- * IconContainer
- */
-export const IconContainer = styled(Column)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  ${ media.desktop`
-    display: none;
-  ` }
-`;
-
-/*
- * Icon
- */
-export const Icon = styled.div`
-  color: ${props => props.color};
-  z-index: 99;
-
-  svg {
-    width: ${props => props.small ? '20px' : '30px'};
-    cursor: ${props => props.pointer ? 'pointer' : 'auto'};
-    path, polygon, polyline, rect, line, circle {
-      fill: ${props => props.fill ? 'currentColor' : 'none'};
-      stroke: ${props => props.stroke ? 'currentColor' : 'none'};
-    }
-  }
-`;
-
-/*
  * SkillIcon
  */
 export const SkillIcon = styled.span`
@@ -563,77 +409,6 @@ export const SkillIcon = styled.span`
     path, polygon, polyline, rect, line, circle {
       fill: ${props => props.fill};
       stroke: ${props => props.stroke};
-    }
-  }
-`;
-
-/*
- * OverlayIcon
- */
-export const OverlayIcon = styled.div`
-  position: absolute;
-  z-index: 98;
-`;
-
-/*
- * OverlayContent
- */
-export const OverlayContent = styled.div`
-  position: absolute;
-  z-index: 99;
-  top: 150px;
-  right: -270px;
-  transform: scale(0);
-`;
-
-/*
- * OverlayMenu
- */
-export const OverlayMenu = styled.ul`
-  list-style-type: none;
-  padding-left: 0;
-  margin-right: 7.3%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  ${ media.desktop`
-    display: none;
-  ` }
-`;
-
-/*
- * OverlayMenuItem
- */
-export const OverlayMenuItem = styled.li`
-  ${rem('font-size', 24)}
-  ${rem('margin-bottom', 20)}
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  div:first-child {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0;
-  }
-  div:last-child {
-    display: flex;
-    justify-content: flex-start;
-    padding: 0;
-  }
-
-  a {
-    ${rem('margin-right', 10)}
-    color: white;
-    text-decoration: none;
-
-    &:hover, &:visited, &:focus {
-      color: white;
-    }
-    &:hover {
-      text-decoration: underline;
     }
   }
 `;

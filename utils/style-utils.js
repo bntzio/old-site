@@ -13,7 +13,7 @@ export function gradientColorB() {
 }
 export function primaryColor() {
   return `
-    #ff3b6b;
+    #6114cc;
   `;
 }
 export function headingsColor() {
@@ -47,6 +47,20 @@ export function rem(property, value) {
   return `
     ${property}: ${value}px;
     ${property}: ${value * 0.0625}rem;
+  `;
+}
+
+export function polyRem(property, value1, value2) {
+  return `
+    ${property}-top: ${value1}px;
+    ${property}-right: ${value2}px;
+    ${property}-bottom: ${value1}px;
+    ${property}-left: ${value2}px;
+
+    ${property}-top: ${value1 * 0.0625}rem;
+    ${property}-right: ${value2 * 0.0625}rem;
+    ${property}-bottom: ${value1 * 0.0625}rem;
+    ${property}-left: ${value2 * 0.0625}rem;
   `;
 }
 
