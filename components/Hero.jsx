@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import { rem, polyRem, media, primaryColor } from './../utils/style-utils';
 import * as icons from '../helpers/icons.yaml';
 
-export default class OldHero extends React.Component {
+export default class Hero extends React.Component {
   constructor(props) {
     super(props);
     this.state = { showMenu: false };
