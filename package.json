@@ -5,7 +5,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop",
+    "dev": "gatsby develop --host 0.0.0.0 --port 8000",
     "storybook-theme": "start-storybook -p 9001 -c .storybooks/.storybook-theme",
     "storybook-styled": "start-storybook -p 8001 -c .storybooks/.storybook-styled"
   },
@@ -25,7 +25,7 @@
   "homepage": "https://github.com/bntzio/gatsby-starter-superstylin#readme",
   "dependencies": {
     "front-matter": "^2.1.1",
-    "gatsby": "^0.12.20",
+    "gatsby": "^0.12.47",
     "hedron": "^0.6.0",
     "highlight.js": "^9.8.0",
     "history": "^2.0.2",
