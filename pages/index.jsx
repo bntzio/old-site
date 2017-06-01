@@ -4,7 +4,7 @@ import { config } from 'config';
 import { IndexPage } from '../components/styled/';
 import Hero from '../components/Hero';
 import About from '../components/About';
-import SkillsSection from '../components/SkillsSection';
+import Skills from '../components/Skills';
 import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
@@ -16,7 +16,7 @@ export default class Index extends React.Component {
         <Helmet title={config.siteTitle} meta={[{ 'name': 'description', 'content': config.siteDescription }]} />
         <Hero />
         <About />
-        <SkillsSection />
+        <Skills />
         <ProjectsSection />
         <ContactSection />
         <Footer />

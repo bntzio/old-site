@@ -11,6 +11,11 @@ export function bgColorB() {
     #009cf3;
   `;
 }
+export function bgColorC() {
+  return `
+    #ffbf02;
+  `;
+}
 
 // ---
 
