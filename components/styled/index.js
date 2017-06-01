@@ -9,7 +9,7 @@ import {
   mainBgColor,
   alternateBgColor,
   primaryColor
-} from '../../utils/style-utils';
+} from '../../utils/styleUtils';
 import {
   Page as HedronPage,
   Row as HedronRow,
@@ -203,7 +203,7 @@ export const Column = styled(HedronColumn)`
 `;
 
 /*
- * SectionTitle
+ * SectionTitle (todo: remove later)
  */
 export const SectionTitle = styled.h3`
   margin: 0;
@@ -214,7 +214,7 @@ export const SectionTitle = styled.h3`
 `;
 
 /*
- * SectionDescription
+ * SectionDescription (todo: remove later)
  */
 export const SectionDescription = styled.p`
   margin: 0;
@@ -237,7 +237,7 @@ export const IndexPage = styled(MainPage)`
 `;
 
 /*
- * SectionPage
+ * SectionPage (todo: remove later)
  */
 export const SectionPage = styled(MainPage)`
   background-color: ${mainBgColor()};
@@ -257,7 +257,7 @@ export const SectionPage = styled(MainPage)`
 `;
 
 /*
- * SectionPageContainer
+ * SectionPageContainer (todo: remove later)
  */
 export const SectionPageContainer = styled.div`
   opacity: 0;
@@ -288,17 +288,6 @@ export const FooterSectionPage = styled(MainPage)`
   ${ media.desktop`
     padding: 30px 60px;
   ` }
-`;
-
-/*
- * AboutSectionTitle
- */
-export const AboutSectionTitle = styled(SectionTitle)`
-  padding-left: ${props => props.pushLeft ? '70px' : '0'};
-  background: ${alternateBgColor()};
-  border-radius: 20px;
-  padding-right: 20px;
-  padding-bottom: 6px;
 `;
 
 /*
@@ -463,26 +452,6 @@ export const GoodbyeMessage = styled.p`
     padding: 0 120px;
     font-size: 18px;
   ` }
-`;
-
-/*
- * ProfileImage
- */
-export const ProfileImage = styled.div`
-  position: absolute;
-  left: 0;
-  top: 4px;
-  background: url('/images/profile.jpg');
-  width: 26px;
-  height: 26px;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  border-width: 10px;
-  padding: 1rem;
-  background-color: ${alternateBgColor()};
-  border-color: ${alternateBgColor()};
-  border-style: solid;
-  border-radius: 9999px;
 `;
 
 /*

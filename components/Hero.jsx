@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Row, Column } from '../utils/grid';
 import { Link } from 'react-router';
-import { rem, polyRem, media, primaryColor } from './../utils/style-utils';
+import { rem, polyRem, media, bgColorA } from './../utils/styleUtils';
 import * as icons from '../helpers/icons.yaml';
 
 export default class Hero extends React.Component {
@@ -183,21 +184,8 @@ export default class Hero extends React.Component {
   }
 }
 
-const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  box-sizing: border-box;
-  padding: ${props => props.fluid ? '0' : '20px'};
-`;
-
-const Row = styled.div`
-  display: flex;
-  width: 100%;
-`;
-
 const HeroPage = styled(Column)`
-  background: ${primaryColor};
+  background: ${bgColorA};
 
   ${rem('padding-top', 10)};
   ${rem('padding-right', 20)};

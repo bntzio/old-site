@@ -1,78 +1,93 @@
 import React from 'react';
 import styled from 'styled-components';
-import { rem, media } from '../utils/style-utils';
+import { Row, Column } from '../utils/grid';
+import { rem, polyRem, media, bgColorB } from '../utils/styleUtils';
 
 export default class About extends React.Component {
+  componentDidMount() {
+    const controller = new ScrollMagic.Controller();
+    const scene1 = new ScrollMagic.Scene({
+      triggerElement: '#aboutPageContainer'
+    })
+    .setClassToggle('#aboutPageContainer', 'fade-in')
+    .addTo(controller);
+
+    const scene2 = new ScrollMagic.Scene({
+      triggerElement: '#aboutPageContainer'
+    })
+    .setClassToggle('#heroPageContainer', 'fade-out')
+    .addTo(controller);
+
+    if (process.env.NODE_ENV !== 'production') {
+      scene1.addIndicators();
+      scene2.addIndicators();
+    }
+  }
   render() {
     return (
-      <AboutContainer>
-        <AboutTitle href="#about" id="about">About this repository</AboutTitle>
-        <AboutContent>
-          <AboutDescription>
-            This repository acts as <em>the heart of my maker journey</em>, everything I've created is here, along with useful
-            notes and case stories for each product. Feel free to navigate through my notes and experiences.
-          </AboutDescription>
-        </AboutContent>
-        <br/><br/>
-        <br/><br/>
-        <AboutTitle href="#why" id="why">Why I do this</AboutTitle>
-        <AboutContent>
-          <AboutDescription>
-            I think every maker in the world should give everyone a glimpse about their work behind the scenes, to show
-            the process, the obstacles and the raw piece of info behind their creations.
-            <br/><br/>
-            In that way, other creators can learn from common mistakes and makers <em>give something back to the community they
-            belong to.</em>
-            <br/><br/>
-            Remember, <em>transparency before anything.</em>
-          </AboutDescription>
-        </AboutContent>
-      </AboutContainer>
+      <AboutSection fluid>
+        <AboutContainer id="aboutPageContainer">
+          <Row>
+            <Column>
+              <AboutTitle className="primaryFont">About Me</AboutTitle>
+              <AboutDescription className="secondaryFont">
+                My name is Enrique, I'm a 22 years old guy and school dropout who is self-taught at everything.
+              </AboutDescription>
+              <AboutDescription className="secondaryFont">
+                I'm a coder, designer and growth hacker who loves making things.
+              </AboutDescription>
+              <AboutDescription className="secondaryFont">
+                In short, I'm a digital maker.
+              </AboutDescription>
+              <br/>
+              <AboutDescription small className="secondaryFont">
+                <em>* Now you kinda know me, but you can always read more things about me or know what I'm doing right now.</em>
+              </AboutDescription>
+            </Column>
+          </Row>
+        </AboutContainer>
+      </AboutSection>
     );
   }
 }
 
-const AboutContainer = styled.div`
-  background: black;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  ${rem('margin-top', 350)};
-`;
+const AboutSection = styled(Column)`
+  background-color: ${bgColorB};
+  transition: all 1s ease-out;
+  ${polyRem('padding', 10, 20)};
 
-const AboutTitle = styled.a`
-  display: block;
-  margin: 0 auto;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  ${rem('font-size', 18)};
-  ${rem('margin-bottom', 25)};
-
-  &:hover {
-    text-decoration: underline;
-  }
+  ${ media.tablet`
+    padding: 20px 40px;
+  ` };
 
   ${ media.desktop`
-    ${rem('font-size', 20)};
-  ` }
+    padding: 30px 60px;
+  ` };
 `;
 
-const AboutContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #ababab;
-  ${rem('line-height', 25)};
-  ${rem('font-size', 16)};
+const AboutContainer = styled.div`
+  opacity: 0;
+  transition: .7s ease-out all;
+  position: relative;
+`;
+
+
+const AboutTitle = styled.h4`
+  margin: 0;
+  ${rem('font-size', 32)};
+  ${rem('margin-bottom', 35)};
+  color: white;
+  display: inline-block;
+  text-align: center;
+
+  ${ media.desktop`
+    text-align: left;
+  ` };
 `;
 
 const AboutDescription = styled.p`
-  text-align: left;
-
-  em {
-    font-style: normal;
-    color: white;
-  }
+  margin: 0;
+  color: white;
+  ${rem('margin-bottom', 12.5)};
+  font-size: ${props => props.small ? '14px' : '18px'};
 `;

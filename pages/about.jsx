@@ -9,7 +9,7 @@ import {
   HeadingOne
 } from '../components/styled/';
 
-export default class About extends React.Component {
+export default class TempAbout extends React.Component {
   render() {
     const { route } = this.props;
     const post = route.page.file;

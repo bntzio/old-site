@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { rem, media } from '../utils/style-utils';
+import { rem, media } from '../utils/styleUtils';
 import * as icons from '../helpers/icons.yaml';
 
 export default class Header extends React.Component {

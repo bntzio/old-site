@@ -6,7 +6,7 @@ import { config } from 'config';
 import Header from '../components/Header';
 import ProjectsHero from '../components/ProjectsHero';
 import Wrapper from '../components/Wrapper';
-import About from '../components/About';
+import AboutRepository from '../components/AboutRepository';
 import Repository from '../components/Repository';
 
 export default class Projects extends React.Component {
@@ -17,7 +17,7 @@ export default class Projects extends React.Component {
         <Header background="black" />
         <ProjectsHero />
         <Wrapper>
-          <About />
+          <AboutRepository />
           <Repository />
         </Wrapper>
       </MainContainer>

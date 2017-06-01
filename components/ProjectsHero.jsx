@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { rem, media } from '../utils/style-utils';
+import { rem, media } from '../utils/styleUtils';
 
 export default class ProjectsHero extends React.Component {
   constructor(props) {

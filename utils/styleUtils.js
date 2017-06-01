@@ -1,5 +1,19 @@
 import { css } from 'styled-components';
 
+// new vars!!
+export function bgColorA() {
+  return `
+    #6114cc;
+  `;
+}
+export function bgColorB() {
+  return `
+    #009cf3;
+  `;
+}
+
+// ---
+
 /* variables (functions) */
 export function gradientColorA() {
   return `
