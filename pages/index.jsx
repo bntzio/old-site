@@ -6,7 +6,7 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
-import ContactSection from '../components/ContactSection';
+import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 // place globalStyles in here for now!
@@ -30,7 +30,7 @@ export default class Index extends React.Component {
         <About />
         <Skills />
         <Projects />
-        <ContactSection />
+        <Contact />
         <Footer />
       </IndexPage>
     );
