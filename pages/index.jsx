@@ -1,7 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import styled from 'styled-components';
+import { bgColorA } from '../utils/styleUtils';
 import { config } from 'config';
-import { IndexPage } from '../components/styled/';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Skills from '../components/Skills';
@@ -19,7 +20,7 @@ export default class Index extends React.Component {
 
   render() {
     return (
-      <IndexPage fluid
+      <IndexPage
         data-0="background-color: rgb(97, 20, 204);"
         data-550="background-color: rgb(0, 156, 243);"
         data-1050="background-color: rgb(255, 191, 2);"
@@ -36,3 +37,8 @@ export default class Index extends React.Component {
     );
   }
 }
+
+const IndexPage = styled.div`
+  background: ${bgColorA};
+  box-sizing: border-box;
+`;
