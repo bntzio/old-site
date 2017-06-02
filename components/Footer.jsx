@@ -1,21 +1,8 @@
 import React from 'react';
+import styled from 'styled-components';
+import { Row, Column } from '../utils/grid';
+import { rem, polyRem, media } from '../utils/styleUtils';
 import * as icons from '../helpers/icons.yaml';
-import {
-  FooterSectionPage,
-  FooterPageContainer,
-  Row,
-  Column,
-  SectionTitle,
-  SectionDescription,
-  SocialMediaContainer,
-  SocialMediaList,
-  SocialMediaListItem,
-  SocialMediaLink,
-  SocialMediaIcon,
-  MainFooterLinkContainer,
-  FooterLinkContainer,
-  FooterLink
-} from './styled/';
 
 export default class Footer extends React.Component {
   componentDidMount() {
@@ -32,14 +19,14 @@ export default class Footer extends React.Component {
   }
   render() {
     return (
-      <FooterSectionPage fluid>
-        <FooterPageContainer id="footerPageContainer">
-          <Row divisions={12}>
-            <Column xs={12} lg={4}>
-              <SectionTitle className="logo footer-logo">Enrique Benitez</SectionTitle>
-              <SectionDescription className="primaryFont">
+      <FooterSection fluid>
+        <FooterContainer id="footerPageContainer">
+          <FooterInnerContainer>
+            <FooterInnerContainerSocial>
+              <FooterTitle className="logo">Enrique Benitez</FooterTitle>
+              <FooterDescription className="primaryFont">
                 Full-stack developer and maker
-              </SectionDescription>
+              </FooterDescription>
               <SocialMediaContainer>
                 <SocialMediaList>
                   <SocialMediaListItem>
@@ -128,8 +115,8 @@ export default class Footer extends React.Component {
                   </SocialMediaListItem>
                 </SocialMediaList>
               </SocialMediaContainer>
-            </Column>
-            <Column xs={12} lg={8}>
+            </FooterInnerContainerSocial>
+            <FooterInnerContainerLinks>
               <MainFooterLinkContainer>
                 <FooterLinkContainer className="nav nav-main">
                   <FooterLink href="#">Blog</FooterLink>
@@ -147,10 +134,132 @@ export default class Footer extends React.Component {
                   <FooterLink href="#">Tools</FooterLink>
                 </FooterLinkContainer>
               </MainFooterLinkContainer>
-            </Column>
-          </Row>
-        </FooterPageContainer>
-      </FooterSectionPage>
+            </FooterInnerContainerLinks>
+          </FooterInnerContainer>
+        </FooterContainer>
+      </FooterSection>
     );
   }
 }
+
+const FooterSection = styled(Column)`
+  background: #252525;
+  transition: all 1s ease-out;
+  text-align: center;
+  ${rem('padding', 20)};
+
+  ${ media.tablet`
+    ${polyRem('padding', 20, 40)};
+  ` }
+
+  ${ media.desktop`
+    ${rem('padding', 30, 60)};
+  ` }
+`;
+
+const FooterContainer = styled.div`
+  opacity: 0;
+  transition: .7s ease-out all;
+  position: relative;
+  transform: translateY(100px);
+  ${polyRem('padding', 0, 50)};
+`;
+
+const FooterInnerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  ${ media.desktop`
+    flex-direction: row;
+    justifyContent: space-around;
+  ` }
+`;
+
+const FooterTitle = styled.h2`
+  margin: 0;
+  ${rem('font-size', 32)};
+  ${rem('margin-bottom', 6)};
+  color: white;
+  display: inline-block;
+`;
+
+const FooterDescription = styled.p`
+  margin: 0;
+  color: white;
+  ${rem('margin-bottom', 20)};
+  font-size: ${props => props.small ? '14px' : '18px'};
+`;
+
+const SocialMediaContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+const SocialMediaList = styled.ul`
+  list-style-type: none;
+  padding-left: 0;
+`;
+
+const SocialMediaListItem = styled.li`
+`;
+
+const SocialMediaLink = styled.a`
+`;
+
+const SocialMediaIcon = styled.span`
+  svg {
+    ${rem('width', 20)};
+    ${rem('height', 20)};
+
+    &:hover {
+      path, polygon, polyline, rect, line, circle {
+        fill: ${ props => props.fill };
+      }
+    }
+
+    path, polygon, polyline, rect, line, circle {
+      transition: .5s all;
+      fill: white;
+    }
+  }
+`;
+
+const MainFooterLinkContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  ${rem('margin-top', 25)};
+`;
+
+const FooterLinkContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const FooterLink = styled.a`
+  ${rem('font-size', 18)};
+  ${rem('margin-bottom', 15)};
+  color: white;
+  text-decoration: none;
+
+  &:hover, &:visited, &:focus {
+    color: white;
+    text-decoration: none;
+  }
+`;
+
+const FooterInnerContainerSocial = styled(Column)`
+  width: 100%;
+
+  ${ media.desktop`
+    width: 33%;
+  ` }
+`;
+
+const FooterInnerContainerLinks = styled(Column)`
+width: 100%;
+
+${ media.desktop`
+  width: 67%;
+` }
+`;
