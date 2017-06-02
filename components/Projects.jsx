@@ -4,8 +4,8 @@ import Slider from 'react-slick';
 import { rem, polyRem, media } from '../utils/styleUtils';
 import { Column } from '../utils/grid';
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+require('slick-carousel/slick/slick.css');
+require('slick-carousel/slick/slick-theme.css');
 
 export default class Projects extends React.Component {
   componentDidMount() {
