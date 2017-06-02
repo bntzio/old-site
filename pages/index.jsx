@@ -8,7 +8,6 @@ import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
-import skrollr from 'skrollr';
 
 // place globalStyles in here for now!
 require('../utils/globalStyles');

@@ -24,6 +24,7 @@ module.exports = React.createClass({
     let animateCss = <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>;
     let gsap = <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>;
     let scrollMagic = <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>;
+    let skrollr = <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>;
 
     let scrollMagicIndicators;
     if (process.env.NODE_ENV !== 'production') {
@@ -43,6 +44,7 @@ module.exports = React.createClass({
           {animateCss}
           {gsap}
           {scrollMagic}
+          {skrollr}
           {scrollMagicIndicators}
         </head>
         <body>
