@@ -8,7 +8,8 @@ import {
   textColor,
   mainBgColor,
   alternateBgColor,
-  primaryColor
+  primaryColor,
+  bgColorA
 } from '../../utils/styleUtils';
 import {
   Page as HedronPage,
@@ -234,6 +235,7 @@ export const MainPage = styled(Page)`
  * IndexPage
  */
 export const IndexPage = styled(MainPage)`
+  background: ${bgColorA};
 `;
 
 /*
