@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row, Column } from '../utils/grid';
 import { Link } from 'react-router';
-import { rem, polyRem, media, bgColorA } from './../utils/styleUtils';
+import { rem, polyRem, media } from './../utils/styleUtils';
 import * as icons from '../helpers/icons.yaml';
 
 export default class Hero extends React.Component {
@@ -185,8 +185,6 @@ export default class Hero extends React.Component {
 }
 
 const HeroPage = styled(Column)`
-  background: ${bgColorA};
-
   ${rem('padding-top', 10)};
   ${rem('padding-right', 20)};
   ${rem('padding-bottom', 60)};

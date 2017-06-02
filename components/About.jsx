@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Row, Column } from '../utils/grid';
-import { rem, polyRem, media, bgColorB } from '../utils/styleUtils';
+import { rem, polyRem, media } from '../utils/styleUtils';
 
 export default class About extends React.Component {
   componentDidMount() {
@@ -52,7 +52,6 @@ export default class About extends React.Component {
 }
 
 const AboutSection = styled(Column)`
-  background-color: ${bgColorB};
   transition: all 1s ease-out;
   ${polyRem('padding', 10, 20)};
 

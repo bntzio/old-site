@@ -44,7 +44,10 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-helmet": "^3.2.2",
+    "react-slick": "^0.14.11",
     "recompose": "^0.21.2",
+    "skrollr": "^0.6.26",
+    "slick-carousel": "^1.6.0",
     "styled-components": "^2.0.0",
     "styled-normalize": "^1.0.0",
     "toml-js": "0.0.8"

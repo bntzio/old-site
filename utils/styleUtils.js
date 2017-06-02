@@ -16,6 +16,11 @@ export function bgColorC() {
     #ffbf02;
   `;
 }
+export function bgColorD() {
+  return `
+    #f9615b;
+  `;
+}
 
 // ---
 

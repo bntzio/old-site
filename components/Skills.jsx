@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { rem, polyRem, media, bgColorC } from '../utils/styleUtils';
-import { Row, Column } from '../utils/grid';
+import { rem, polyRem, media } from '../utils/styleUtils';
+import { Column } from '../utils/grid';
 import * as skills from '../helpers/skills.yaml';
 
 export default class Skills extends React.Component {
@@ -144,7 +144,6 @@ export default class Skills extends React.Component {
 }
 
 const SkillsPage = styled.section`
-  background-color: ${bgColorC};
   transition: all 1s ease-out;
 
   ${polyRem('padding', 10, 20)};
