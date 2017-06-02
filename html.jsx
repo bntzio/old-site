@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { prefixLink } from 'gatsby-helpers';
-import styleSheet from 'styled-components/lib/models/StyleSheet';
+import { ServerStyleSheet } from 'styled-components';
 
 const BUILD_TIME = new Date().getTime()
 
@@ -16,7 +16,8 @@ module.exports = React.createClass({
 
     let css;
     if (process.env.NODE_ENV === 'production') {
-      const styles = styleSheet.rules().map(rule => rule.cssText).join('\n');
+      const sheet = new ServerStyleSheet();
+      const styles = sheet.getStyleTags();
       css = <style dangerouslySetInnerHTML={{ __html: styles }} />;
     }
 
