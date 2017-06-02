@@ -26,6 +26,8 @@ module.exports = React.createClass({
     let gsap = <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>;
     let scrollMagic = <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>;
     let skrollr = <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>;
+    let slick = <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />;
+    let slickTheme = <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />;
 
     let scrollMagicIndicators;
     if (process.env.NODE_ENV !== 'production') {
@@ -46,6 +48,8 @@ module.exports = React.createClass({
           {gsap}
           {scrollMagic}
           {skrollr}
+          {slick}
+          {slickTheme}
           {scrollMagicIndicators}
         </head>
         <body>
